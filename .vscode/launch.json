@@ -1,0 +1,16 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "dev",
+			"type": "node-terminal",
+			"command": "pnpm dev",
+			"request": "launch",
+			"serverReadyAction": {
+				"pattern": "(http://localhost:[0-9]+/?)",
+				"uriFormat": "%s",
+				"action": "debugWithEdge"
+			}
+		}
+	]
+}
