@@ -2,6 +2,7 @@ import { z } from "zod/mini";
 import type { DataName, EndpointConfig } from "../type-utils";
 import {
 	atContext,
+	maybeArray,
 	multiLanguage,
 	odptTime,
 	owlSameAs,
@@ -13,14 +14,14 @@ const dataname = "odpt:TrainTimetable" satisfies DataName;
 
 const params = z.partial(
 	z.object({
-		"@id": z.string(),
-		"owl:sameAs": owlSameAs,
-		"odpt:trainNumber": z.string(),
-		"odpt:railway": owlSameAs,
-		"odpt:operator": owlSameAs,
-		"odpt:trainType": owlSameAs,
-		"odpt:train": owlSameAs,
-		"odpt:calendar": owlSameAs,
+		"@id": maybeArray(z.string()),
+		"owl:sameAs": maybeArray(owlSameAs),
+		"odpt:trainNumber": maybeArray(z.string()),
+		"odpt:railway": maybeArray(owlSameAs),
+		"odpt:operator": maybeArray(owlSameAs),
+		"odpt:trainType": maybeArray(owlSameAs),
+		"odpt:train": maybeArray(owlSameAs),
+		"odpt:calendar": maybeArray(owlSameAs),
 	}),
 );
 

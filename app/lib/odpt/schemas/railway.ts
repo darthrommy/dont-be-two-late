@@ -2,6 +2,7 @@ import { z } from "zod/mini";
 import type { DataName, EndpointConfig } from "../type-utils";
 import {
 	atContext,
+	maybeArray,
 	multiLanguage,
 	owlSameAs,
 	ugRegion,
@@ -12,11 +13,11 @@ const dataname = "odpt:Railway" satisfies DataName;
 
 const params = z.partial(
 	z.object({
-		"@id": z.string(),
-		"owl:sameAs": owlSameAs,
-		"dc:title": z.string(),
-		"odpt:operator": owlSameAs,
-		"odpt:lineCode": z.string(),
+		"@id": maybeArray(z.string()),
+		"owl:sameAs": maybeArray(owlSameAs),
+		"dc:title": maybeArray(z.string()),
+		"odpt:operator": maybeArray(owlSameAs),
+		"odpt:lineCode": maybeArray(z.string()),
 	}),
 );
 
@@ -49,3 +50,4 @@ export const OdptRailway = {
 	params: params,
 	data: data,
 } as const satisfies EndpointConfig;
+export type OdptRailwayType = z.infer<typeof data>;

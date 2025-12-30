@@ -2,6 +2,7 @@ import { z } from "zod/mini";
 import type { DataName, EndpointConfig } from "../type-utils";
 import {
 	atContext,
+	maybeArray,
 	multiLanguage,
 	odptTime,
 	owlSameAs,
@@ -13,13 +14,13 @@ const dataname = "odpt:StationTimetable" satisfies DataName;
 
 const params = z.partial(
 	z.object({
-		"@id": z.string(),
-		"owl:sameAs": owlSameAs,
-		"odpt:station": owlSameAs,
-		"odpt:operator": owlSameAs,
-		"odpt:railDirection": owlSameAs,
-		"odpt:calendar": owlSameAs,
-		"dc:date": xsdDatetime,
+		"@id": maybeArray(z.string()),
+		"owl:sameAs": maybeArray(owlSameAs),
+		"odpt:station": maybeArray(owlSameAs),
+		"odpt:operator": maybeArray(owlSameAs),
+		"odpt:railDirection": maybeArray(owlSameAs),
+		"odpt:calendar": maybeArray(owlSameAs),
+		"dc:date": maybeArray(xsdDatetime),
 	}),
 );
 

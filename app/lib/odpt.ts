@@ -1,8 +1,5 @@
 import { z } from "zod/mini";
 import type { ODPT_BASE_URL } from "./odpt/const";
-import { OdptCalendar } from "./odpt/schemas/calender";
-import { OdptOperator } from "./odpt/schemas/operator";
-import { OdptPassengerSurvey } from "./odpt/schemas/passenger-survey";
 import { OdptRailDirection } from "./odpt/schemas/rail-direction";
 import { OdptRailway } from "./odpt/schemas/railway";
 import { OdptRailwayFare } from "./odpt/schemas/railway-fare";
@@ -14,9 +11,6 @@ import { OdptTrainTimetable } from "./odpt/schemas/train-timetable";
 import { OdptTrainType } from "./odpt/schemas/train-type";
 
 const DATA = {
-	OdptOperator,
-	OdptCalendar,
-	OdptPassengerSurvey,
 	OdptRailDirection,
 	OdptRailway,
 	OdptRailwayFare,
@@ -67,12 +61,17 @@ export const odpt = (
 		>;
 
 		// Construct URL with query parameters
-		const url = new URL(target, baseUrl);
+		const endpoint = encodeURIComponent(DATA[target].name);
+		const url = new URL(endpoint, baseUrl);
 		url.searchParams.set("acl:consumerKey", apiKey);
 
 		// Add validated params to URL
 		for (const [key, value] of Object.entries(validatedParams)) {
-			url.searchParams.set(key, value);
+			const encodedValue = Array.isArray(value)
+				? value.map((v) => v).join(",")
+				: value;
+
+			url.searchParams.set(key, encodedValue);
 		}
 
 		const response = await fetch(url, { method: "GET" });
@@ -80,7 +79,7 @@ export const odpt = (
 		if (response.ok) {
 			const responseJson = await response.json();
 
-			const data = z.parse(z.array(DATA[target].data), responseJson);
+			const data = z.array(DATA[target].data).parse(responseJson);
 
 			return {
 				ok: true,

@@ -1,16 +1,22 @@
 import { z } from "zod/mini";
 import type { DataName, EndpointConfig } from "../type-utils";
-import { atContext, owlSameAs, xsdDate, xsdDatetime } from "./base-schemas";
+import {
+	atContext,
+	maybeArray,
+	owlSameAs,
+	xsdDate,
+	xsdDatetime,
+} from "./base-schemas";
 
 const dataname = "odpt:RailwayFare" satisfies DataName;
 
 const params = z.partial(
 	z.object({
-		"@id": z.string(),
-		"owl:sameAs": owlSameAs,
-		"odpt:operator": owlSameAs,
-		"odpt:fromStation": owlSameAs,
-		"odpt:toStation": owlSameAs,
+		"@id": maybeArray(z.string()),
+		"owl:sameAs": maybeArray(owlSameAs),
+		"odpt:operator": maybeArray(owlSameAs),
+		"odpt:fromStation": maybeArray(owlSameAs),
+		"odpt:toStation": maybeArray(owlSameAs),
 	}),
 );
 
