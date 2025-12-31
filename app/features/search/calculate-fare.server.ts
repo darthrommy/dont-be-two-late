@@ -1,4 +1,4 @@
-import { odpt } from "~/lib/odpt";
+import { odpt } from "~/lib/odpt.server";
 import type { STATION_KEYS } from "./get-graph.server";
 import type { RouteItemWithTime } from "./types";
 import { IS_OPERATOR_LIMITED, type Operator } from "./utils";

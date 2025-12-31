@@ -2,11 +2,11 @@ import "dotenv/config";
 // @ts-expect-error: Node.js built-in module
 import fs from "node:fs/promises";
 import { consola } from "consola";
-import { odpt } from "~/lib/odpt";
 import type { OdptRailwayType } from "~/lib/odpt/schemas/railway";
 import type { OdptStationType } from "~/lib/odpt/schemas/station";
 import type { OdptStationTimetableType } from "~/lib/odpt/schemas/station-timetable";
 import type { OdptTrainTimetableType } from "~/lib/odpt/schemas/train-timetable";
+import { odpt } from "~/lib/odpt.server";
 import type {
 	Railway,
 	Station,
