@@ -1,5 +1,10 @@
 import type { RouteItemWithTime } from "./types";
 
+/**
+ * Get the best route from multiple route options
+ * @param routes Route options with train times
+ * @returns Best route or null if none found
+ */
 export const getBestRoute = (routes: RouteItemWithTime[][]) => {
 	if (routes.length === 0) {
 		return null;

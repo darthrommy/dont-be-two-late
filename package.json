@@ -5,13 +5,14 @@
 	"scripts": {
 		"build": "react-router build",
 		"cf-typegen": "wrangler types",
+		"rr-typegen": "react-router typegen",
 		"deploy": "pnpm run build && wrangler deploy",
 		"dev": "react-router dev",
 		"postinstall": "pnpm cf-typegen",
 		"preview": "pnpm build && vite preview",
 		"typecheck": "pnpm cf-typegen && react-router typegen && tsc -b",
 		"biome:check": "biome check --write",
-		"generate": "tsx ./app/features/search/generate.ts && biome check --write"
+		"generate": "tsx ./app/features/search/_generate.ts && biome check --write"
 	},
 	"dependencies": {
 		"@fontsource-variable/geist": "^5.2.8",

@@ -1,13 +1,38 @@
 /**
+ * Resolves the station timetable based on the current calendar type.
+ * @returns A promise that resolves to the station timetable data.
+ */
+export const resolveStationTimetable = async () => {
+	const calendar = resolveCalendar();
+	const module = calendar.weekday
+		? await import("./static/station-timetables-weekday.json")
+		: await import("./static/station-timetables-holiday.json");
+	return module.default;
+};
+
+/**
+ * Resolves the train timetable based on the current calendar type.
+ * @returns A promise that resolves to the train timetable data.
+ */
+export const resolveTrainTimetable = async () => {
+	const calendar = resolveCalendar();
+	const module = calendar.weekday
+		? await import("./static/train-timetables-weekday.json")
+		: await import("./static/train-timetables-holiday.json");
+	return module.default;
+};
+
+/**
  * Resolves the current calendar type based on predefined Saturday holidays.
  * @returns The calendar ID string.
  */
-export const resolveCalendar = () => {
+const resolveCalendar = () => {
 	const today = new Date(Date.now() + 9 * 60 * 60 * 1000); // JST
 	const ISODate = today.toISOString().split("T")[0];
+
 	return saturdayHolidays.includes(ISODate)
-		? "odpt.Calendar:SaturdayHoliday"
-		: "odpt.Calendar:Weekday";
+		? ({ id: "odpt.Calendar:SaturdayHoliday", weekday: true } as const)
+		: ({ id: "odpt.Calendar:Weekday", weekday: false } as const);
 };
 
 const saturdayHolidays = [

@@ -2,7 +2,7 @@ import { addTrainInfo } from "./add-train-info.server";
 import { calculateFare } from "./calculate-fare.server";
 import { getBestRoute } from "./get-best-route.server";
 import { getGraph } from "./get-graph.server";
-import { getRoutes } from "./get-route.server";
+import { getValidRoutes } from "./get-route.server";
 import { resolveStationIds } from "./resolve-station-id.server";
 import type { RouteObject } from "./types";
 
@@ -21,16 +21,22 @@ export const searchRoute = async (
 	const fromStations = resolveStationIds(from);
 	const toStations = resolveStationIds(to);
 
-	const allPossibleRoutes = fromStations.flatMap((fromStation) =>
-		toStations.flatMap((toStation) => {
-			// Placeholder for graph generation and route finding logic
-			const graph = getGraph(fromStation, toStation);
-			const routes = getRoutes(graph.validPaths);
-			const routesWithTrainInfo = addTrainInfo(routes);
-			const bestSorted = getBestRoute(routesWithTrainInfo);
-			return bestSorted ? [bestSorted] : [];
-		}),
+	const allPossibleRoutesNoFlat = await Promise.all(
+		fromStations.map(
+			async (fromStation) =>
+				await Promise.all(
+					toStations.map(async (toStation) => {
+						// Placeholder for graph generation and route finding logic
+						const graph = getGraph(fromStation, toStation);
+						const routes = getValidRoutes(graph.validPaths);
+						const routesWithTrainInfo = await addTrainInfo(routes);
+						const bestSorted = getBestRoute(routesWithTrainInfo);
+						return bestSorted ? [bestSorted] : [];
+					}),
+				),
+		),
 	);
+	const allPossibleRoutes = allPossibleRoutesNoFlat.flat(2);
 
 	const bestRoute = getBestRoute(allPossibleRoutes);
 

@@ -1,6 +1,11 @@
 import type { FlattenedGraph, RouteItem } from "./types";
 
-export const getRoutes = (paths: FlattenedGraph[][]) => {
+/**
+ * Extract valid route segments from flattened graph paths
+ * @param paths Flattened graph paths
+ * @returns Valid route segments
+ */
+export const getValidRoutes = (paths: FlattenedGraph[][]) => {
 	return paths.map((path) => {
 		// 経路が短すぎて区間を作れない場合はスキップ（念のため）
 		if (path.length < 2) return [];

@@ -3,6 +3,12 @@ import type { STATION_KEYS } from "./get-graph.server";
 import type { RouteItemWithTime } from "./types";
 import { IS_OPERATOR_LIMITED, type Operator } from "./utils";
 
+/**
+ * Calculate total fare for a given route
+ * @param route Route segments with train times
+ * @param env Environment variables
+ * @returns Total fare
+ */
 export const calculateFare = async (route: RouteItemWithTime[], env: Env) => {
 	const odptClient = odpt(env.ODPT_API_KEY);
 
