@@ -34,5 +34,11 @@
 			}
 		}
 	},
-	"css": { "parser": { "tailwindDirectives": true } }
+	"css": { "parser": { "tailwindDirectives": true } },
+	"overrides": [
+		{
+			"includes": ["app/components/ui/**/*.tsx"],
+			"linter": { "rules": { "a11y": { "useSemanticElements": "off" } } }
+		}
+	]
 }
