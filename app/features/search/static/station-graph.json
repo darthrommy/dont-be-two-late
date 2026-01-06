@@ -1,0 +1,302 @@
+{
+	"odpt.Station:JR-East.SaikyoKawagoe.Shibuya": {
+		"identical": [
+			"odpt.Station:JR-East.ShonanShinjuku.Shibuya",
+			"odpt.Station:JR-East.Yamanote.Shibuya",
+			"odpt.Station:TokyoMetro.Fukutoshin.Shibuya",
+			"odpt.Station:TokyoMetro.Ginza.Shibuya"
+		],
+		"prev": [
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+				"direction": "odpt.RailDirection:Southbound"
+			}
+		]
+	},
+	"odpt.Station:JR-East.SaikyoKawagoe.Shinjuku": {
+		"identical": [
+			"odpt.Station:JR-East.ShonanShinjuku.Shinjuku",
+			"odpt.Station:JR-East.Yamanote.Shinjuku",
+			"odpt.Station:Toei.Oedo.Shinjuku",
+			"odpt.Station:Toei.Oedo.ShinjukuNishiguchi",
+			"odpt.Station:TokyoMetro.Marunouchi.Shinjuku"
+		],
+		"prev": [
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Shibuya",
+				"direction": "odpt.RailDirection:Northbound"
+			}
+		]
+	},
+	"odpt.Station:JR-East.ShonanShinjuku.Shibuya": {
+		"identical": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shibuya",
+			"odpt.Station:JR-East.Yamanote.Shibuya",
+			"odpt.Station:TokyoMetro.Fukutoshin.Shibuya",
+			"odpt.Station:TokyoMetro.Ginza.Shibuya"
+		],
+		"prev": [
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Shinjuku",
+				"direction": "odpt.RailDirection:Southbound"
+			}
+		]
+	},
+	"odpt.Station:JR-East.ShonanShinjuku.Shinjuku": {
+		"identical": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+			"odpt.Station:JR-East.Yamanote.Shinjuku",
+			"odpt.Station:Toei.Oedo.Shinjuku",
+			"odpt.Station:Toei.Oedo.ShinjukuNishiguchi",
+			"odpt.Station:TokyoMetro.Marunouchi.Shinjuku"
+		],
+		"prev": [
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Shibuya",
+				"direction": "odpt.RailDirection:Northbound"
+			}
+		]
+	},
+	"odpt.Station:JR-East.Yamanote.Shinjuku": {
+		"identical": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+			"odpt.Station:JR-East.ShonanShinjuku.Shinjuku",
+			"odpt.Station:Toei.Oedo.Shinjuku",
+			"odpt.Station:Toei.Oedo.ShinjukuNishiguchi",
+			"odpt.Station:TokyoMetro.Marunouchi.Shinjuku"
+		],
+		"prev": [
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Shibuya",
+				"direction": "odpt.RailDirection:OuterLoop"
+			}
+		]
+	},
+	"odpt.Station:JR-East.Yamanote.Shibuya": {
+		"identical": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shibuya",
+			"odpt.Station:JR-East.ShonanShinjuku.Shibuya",
+			"odpt.Station:TokyoMetro.Fukutoshin.Shibuya",
+			"odpt.Station:TokyoMetro.Ginza.Shibuya"
+		],
+		"prev": [
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Shinjuku",
+				"direction": "odpt.RailDirection:InnerLoop"
+			}
+		]
+	},
+	"odpt.Station:Toei.Oedo.HigashiShinjuku": {
+		"identical": ["odpt.Station:TokyoMetro.Fukutoshin.HigashiShinjuku"],
+		"prev": [
+			{
+				"id": "odpt.Station:Toei.Oedo.HongoSanchome",
+				"direction": "odpt.RailDirection:InnerLoop"
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.ShinjukuNishiguchi",
+				"direction": "odpt.RailDirection:OuterLoop"
+			}
+		]
+	},
+	"odpt.Station:Toei.Oedo.HongoSanchome": {
+		"identical": ["odpt.Station:TokyoMetro.Marunouchi.HongoSanchome"],
+		"prev": [
+			{
+				"id": "odpt.Station:Toei.Oedo.UenoOkachimachi",
+				"direction": "odpt.RailDirection:InnerLoop"
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.HigashiShinjuku",
+				"direction": "odpt.RailDirection:OuterLoop"
+			}
+		]
+	},
+	"odpt.Station:Toei.Oedo.ShinjukuNishiguchi": {
+		"identical": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+			"odpt.Station:JR-East.ShonanShinjuku.Shinjuku",
+			"odpt.Station:JR-East.Yamanote.Shinjuku",
+			"odpt.Station:TokyoMetro.Marunouchi.Shinjuku"
+		],
+		"prev": [
+			{
+				"id": "odpt.Station:Toei.Oedo.HigashiShinjuku",
+				"direction": "odpt.RailDirection:InnerLoop"
+			}
+		]
+	},
+	"odpt.Station:Toei.Oedo.Shinjuku": {
+		"identical": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+			"odpt.Station:JR-East.ShonanShinjuku.Shinjuku",
+			"odpt.Station:JR-East.Yamanote.Shinjuku"
+		],
+		"prev": [
+			{
+				"id": "odpt.Station:Toei.Oedo.UenoOkachimachi",
+				"direction": "odpt.RailDirection:OuterLoop"
+			}
+		]
+	},
+	"odpt.Station:Toei.Oedo.UenoOkachimachi": {
+		"identical": ["odpt.Station:TokyoMetro.Ginza.UenoHirokoji"],
+		"prev": [
+			{
+				"id": "odpt.Station:Toei.Oedo.Shinjuku",
+				"direction": "odpt.RailDirection:InnerLoop"
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.HongoSanchome",
+				"direction": "odpt.RailDirection:OuterLoop"
+			}
+		]
+	},
+	"odpt.Station:TokyoMetro.Marunouchi.Shinjuku": {
+		"identical": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+			"odpt.Station:JR-East.ShonanShinjuku.Shinjuku",
+			"odpt.Station:JR-East.Yamanote.Shinjuku",
+			"odpt.Station:Toei.Oedo.ShinjukuNishiguchi"
+		],
+		"prev": [
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome",
+				"direction": "odpt.RailDirection:TokyoMetro.Ogikubo"
+			}
+		]
+	},
+	"odpt.Station:TokyoMetro.Fukutoshin.HigashiShinjuku": {
+		"identical": ["odpt.Station:Toei.Oedo.HigashiShinjuku"],
+		"prev": [
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome",
+				"direction": "odpt.RailDirection:TokyoMetro.Wakoshi"
+			}
+		]
+	},
+	"odpt.Station:TokyoMetro.Fukutoshin.Shibuya": {
+		"identical": [
+			"odpt.Station:TokyoMetro.Ginza.Shibuya",
+			"odpt.Station:JR-East.SaikyoKawagoe.Shibuya",
+			"odpt.Station:JR-East.ShonanShinjuku.Shibuya",
+			"odpt.Station:JR-East.Yamanote.Shibuya"
+		],
+		"prev": [
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome",
+				"direction": "odpt.RailDirection:TokyoMetro.Shibuya"
+			}
+		]
+	},
+	"odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome": {
+		"identical": ["odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome"],
+		"prev": [
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.Shibuya",
+				"direction": "odpt.RailDirection:TokyoMetro.Wakoshi"
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.HigashiShinjuku",
+				"direction": "odpt.RailDirection:TokyoMetro.Shibuya"
+			}
+		]
+	},
+	"odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke": {
+		"identical": ["odpt.Station:TokyoMetro.Marunouchi.AkasakaMitsuke"],
+		"prev": [
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Ginza",
+				"direction": "odpt.RailDirection:TokyoMetro.Shibuya"
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Shibuya",
+				"direction": "odpt.RailDirection:TokyoMetro.Asakusa"
+			}
+		]
+	},
+	"odpt.Station:TokyoMetro.Ginza.Ginza": {
+		"identical": ["odpt.Station:TokyoMetro.Marunouchi.Ginza"],
+		"prev": [
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.UenoHirokoji",
+				"direction": "odpt.RailDirection:TokyoMetro.Shibuya"
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke",
+				"direction": "odpt.RailDirection:TokyoMetro.Asakusa"
+			}
+		]
+	},
+	"odpt.Station:TokyoMetro.Ginza.Shibuya": {
+		"identical": [
+			"odpt.Station:TokyoMetro.Fukutoshin.Shibuya",
+			"odpt.Station:JR-East.SaikyoKawagoe.Shibuya",
+			"odpt.Station:JR-East.ShonanShinjuku.Shibuya",
+			"odpt.Station:JR-East.Yamanote.Shibuya"
+		],
+		"prev": [
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke",
+				"direction": "odpt.RailDirection:TokyoMetro.Shibuya"
+			}
+		]
+	},
+	"odpt.Station:TokyoMetro.Ginza.UenoHirokoji": {
+		"identical": ["odpt.Station:Toei.Oedo.UenoOkachimachi"],
+		"prev": [
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Ginza",
+				"direction": "odpt.RailDirection:TokyoMetro.Asakusa"
+			}
+		]
+	},
+	"odpt.Station:TokyoMetro.Marunouchi.AkasakaMitsuke": {
+		"identical": ["odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke"],
+		"prev": [
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Ginza",
+				"direction": "odpt.RailDirection:TokyoMetro.Ogikubo"
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome",
+				"direction": "odpt.RailDirection:TokyoMetro.Ikebukuro"
+			}
+		]
+	},
+	"odpt.Station:TokyoMetro.Marunouchi.Ginza": {
+		"identical": ["odpt.Station:TokyoMetro.Ginza.Ginza"],
+		"prev": [
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.HongoSanchome",
+				"direction": "odpt.RailDirection:TokyoMetro.Ogikubo"
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.AkasakaMitsuke",
+				"direction": "odpt.RailDirection:TokyoMetro.Ikebukuro"
+			}
+		]
+	},
+	"odpt.Station:TokyoMetro.Marunouchi.HongoSanchome": {
+		"identical": ["odpt.Station:Toei.Oedo.HongoSanchome"],
+		"prev": [
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Ginza",
+				"direction": "odpt.RailDirection:TokyoMetro.Ikebukuro"
+			}
+		]
+	},
+	"odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome": {
+		"identical": ["odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"],
+		"prev": [
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.AkasakaMitsuke",
+				"direction": "odpt.RailDirection:TokyoMetro.Ogikubo"
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Shinjuku",
+				"direction": "odpt.RailDirection:TokyoMetro.Ikebukuro"
+			}
+		]
+	}
+}

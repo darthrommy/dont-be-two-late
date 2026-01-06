@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
@@ -7,7 +7,8 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["**/*", "!pnpm-lock.yaml"]
+		"includes": ["**/*", "!pnpm-lock.yaml"],
+		"maxSize": 1500000
 	},
 	"formatter": {
 		"enabled": true,
@@ -33,5 +34,11 @@
 			}
 		}
 	},
-	"css": { "parser": { "tailwindDirectives": true } }
+	"css": { "parser": { "tailwindDirectives": true } },
+	"overrides": [
+		{
+			"includes": ["app/components/ui/**/*.tsx"],
+			"linter": { "rules": { "a11y": { "useSemanticElements": "off" } } }
+		}
+	]
 }

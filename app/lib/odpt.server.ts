@@ -74,7 +74,10 @@ export const odpt = (
 			url.searchParams.set(key, encodedValue);
 		}
 
-		const response = await fetch(url, { method: "GET" });
+		const response = await fetch(url, {
+			method: "GET",
+			headers: { "cache-control": "no-cache, no-store, max-age=0" },
+		});
 
 		if (response.ok) {
 			const responseJson = await response.json();

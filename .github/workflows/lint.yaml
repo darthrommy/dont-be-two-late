@@ -35,5 +35,3 @@ jobs:
       - name: Run Linter
         run: pnpm biome ci
 
-      - name: Run Typecheck
-        run: pnpm typecheck

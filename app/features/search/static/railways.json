@@ -1,0 +1,745 @@
+[
+	{
+		"id": "odpt.Railway:JR-East.SaikyoKawagoe",
+		"title": "埼京線・川越線",
+		"operator": "odpt.Operator:JR-East",
+		"stations": [
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Osaki",
+				"index": 1
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Ebisu",
+				"index": 2
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Shibuya",
+				"index": 3
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+				"index": 4
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Ikebukuro",
+				"index": 5
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Itabashi",
+				"index": 6
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Jujo",
+				"index": 7
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Akabane",
+				"index": 8
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.KitaAkabane",
+				"index": 9
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Ukimafunado",
+				"index": 10
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.TodaKoen",
+				"index": 11
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Toda",
+				"index": 12
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.KitaToda",
+				"index": 13
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.MusashiUrawa",
+				"index": 14
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.NakaUrawa",
+				"index": 15
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.MinamiYono",
+				"index": 16
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.YonoHommachi",
+				"index": 17
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.KitaYono",
+				"index": 18
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Omiya",
+				"index": 19
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Nisshin",
+				"index": 20
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.NishiOmiya",
+				"index": 21
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Sashiogi",
+				"index": 22
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.MinamiFuruya",
+				"index": 23
+			},
+			{
+				"id": "odpt.Station:JR-East.SaikyoKawagoe.Kawagoe",
+				"index": 24
+			}
+		],
+		"ascendingDir": "odpt.RailDirection:Northbound",
+		"descendingDir": "odpt.RailDirection:Southbound"
+	},
+	{
+		"id": "odpt.Railway:JR-East.ShonanShinjuku",
+		"title": "湘南新宿ライン",
+		"operator": "odpt.Operator:JR-East",
+		"stations": [
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Ofuna",
+				"index": 1
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Totsuka",
+				"index": 2
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.HigashiTotsuka",
+				"index": 3
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Hodogaya",
+				"index": 4
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Yokohama",
+				"index": 5
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.ShinKawasaki",
+				"index": 6
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.MusashiKosugi",
+				"index": 7
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.NishiOi",
+				"index": 8
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Osaki",
+				"index": 9
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Ebisu",
+				"index": 10
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Shibuya",
+				"index": 11
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Shinjuku",
+				"index": 12
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Ikebukuro",
+				"index": 13
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Akabane",
+				"index": 14
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Urawa",
+				"index": 15
+			},
+			{
+				"id": "odpt.Station:JR-East.ShonanShinjuku.Omiya",
+				"index": 16
+			}
+		],
+		"ascendingDir": "odpt.RailDirection:Northbound",
+		"descendingDir": "odpt.RailDirection:Southbound"
+	},
+	{
+		"id": "odpt.Railway:JR-East.Yamanote",
+		"title": "山手線",
+		"operator": "odpt.Operator:JR-East",
+		"stations": [
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Osaki",
+				"index": 1
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Gotanda",
+				"index": 2
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Meguro",
+				"index": 3
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Ebisu",
+				"index": 4
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Shibuya",
+				"index": 5
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Harajuku",
+				"index": 6
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Yoyogi",
+				"index": 7
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Shinjuku",
+				"index": 8
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.ShinOkubo",
+				"index": 9
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Takadanobaba",
+				"index": 10
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Mejiro",
+				"index": 11
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Ikebukuro",
+				"index": 12
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Otsuka",
+				"index": 13
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Sugamo",
+				"index": 14
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Komagome",
+				"index": 15
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Tabata",
+				"index": 16
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.NishiNippori",
+				"index": 17
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Nippori",
+				"index": 18
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Uguisudani",
+				"index": 19
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Ueno",
+				"index": 20
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Okachimachi",
+				"index": 21
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Akihabara",
+				"index": 22
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Kanda",
+				"index": 23
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Tokyo",
+				"index": 24
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Yurakucho",
+				"index": 25
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Shimbashi",
+				"index": 26
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Hamamatsucho",
+				"index": 27
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Tamachi",
+				"index": 28
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.TakanawaGateway",
+				"index": 29
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Shinagawa",
+				"index": 30
+			},
+			{
+				"id": "odpt.Station:JR-East.Yamanote.Osaki",
+				"index": 31
+			}
+		],
+		"ascendingDir": "odpt.RailDirection:OuterLoop",
+		"descendingDir": "odpt.RailDirection:InnerLoop"
+	},
+	{
+		"id": "odpt.Railway:Toei.Oedo",
+		"title": "大江戸線",
+		"operator": "odpt.Operator:Toei",
+		"stations": [
+			{
+				"id": "odpt.Station:Toei.Oedo.Tochomae",
+				"index": 1
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.ShinjukuNishiguchi",
+				"index": 2
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.HigashiShinjuku",
+				"index": 3
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.WakamatsuKawada",
+				"index": 4
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.UshigomeYanagicho",
+				"index": 5
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.UshigomeKagurazaka",
+				"index": 6
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Iidabashi",
+				"index": 7
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Kasuga",
+				"index": 8
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.HongoSanchome",
+				"index": 9
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.UenoOkachimachi",
+				"index": 10
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.ShinOkachimachi",
+				"index": 11
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Kuramae",
+				"index": 12
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Ryogoku",
+				"index": 13
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Morishita",
+				"index": 14
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.KiyosumiShirakawa",
+				"index": 15
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.MonzenNakacho",
+				"index": 16
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Tsukishima",
+				"index": 17
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Kachidoki",
+				"index": 18
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Tsukijishijo",
+				"index": 19
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Shiodome",
+				"index": 20
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Daimon",
+				"index": 21
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Akabanebashi",
+				"index": 22
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.AzabuJuban",
+				"index": 23
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Roppongi",
+				"index": 24
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.AoyamaItchome",
+				"index": 25
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.KokuritsuKyogijo",
+				"index": 26
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Yoyogi",
+				"index": 27
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Shinjuku",
+				"index": 28
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Tochomae",
+				"index": 29
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.NishiShinjukuGochome",
+				"index": 30
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.NakanoSakaue",
+				"index": 31
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.HigashiNakano",
+				"index": 32
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Nakai",
+				"index": 33
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.OchiaiMinamiNagasaki",
+				"index": 34
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.ShinEgota",
+				"index": 35
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Nerima",
+				"index": 36
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Toshimaen",
+				"index": 37
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.NerimaKasugacho",
+				"index": 38
+			},
+			{
+				"id": "odpt.Station:Toei.Oedo.Hikarigaoka",
+				"index": 39
+			}
+		],
+		"ascendingDir": "odpt.RailDirection:OuterLoop",
+		"descendingDir": "odpt.RailDirection:InnerLoop"
+	},
+	{
+		"id": "odpt.Railway:TokyoMetro.Marunouchi",
+		"title": "丸ノ内線",
+		"operator": "odpt.Operator:TokyoMetro",
+		"stations": [
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Ogikubo",
+				"index": 1
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.MinamiAsagaya",
+				"index": 2
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.ShinKoenji",
+				"index": 3
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.HigashiKoenji",
+				"index": 4
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.ShinNakano",
+				"index": 5
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue",
+				"index": 6
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.NishiShinjuku",
+				"index": 7
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Shinjuku",
+				"index": 8
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome",
+				"index": 9
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.ShinjukuGyoemmae",
+				"index": 10
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.YotsuyaSanchome",
+				"index": 11
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Yotsuya",
+				"index": 12
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.AkasakaMitsuke",
+				"index": 13
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.KokkaiGijidomae",
+				"index": 14
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Kasumigaseki",
+				"index": 15
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Ginza",
+				"index": 16
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Tokyo",
+				"index": 17
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Otemachi",
+				"index": 18
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Awajicho",
+				"index": 19
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Ochanomizu",
+				"index": 20
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.HongoSanchome",
+				"index": 21
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Korakuen",
+				"index": 22
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Myogadani",
+				"index": 23
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.ShinOtsuka",
+				"index": 24
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Marunouchi.Ikebukuro",
+				"index": 25
+			}
+		],
+		"ascendingDir": "odpt.RailDirection:TokyoMetro.Ikebukuro",
+		"descendingDir": "odpt.RailDirection:TokyoMetro.Ogikubo"
+	},
+	{
+		"id": "odpt.Railway:TokyoMetro.Fukutoshin",
+		"title": "副都心線",
+		"operator": "odpt.Operator:TokyoMetro",
+		"stations": [
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi",
+				"index": 1
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.ChikatetsuNarimasu",
+				"index": 2
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.ChikatetsuAkatsuka",
+				"index": 3
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.Heiwadai",
+				"index": 4
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.Hikawadai",
+				"index": 5
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.KotakeMukaihara",
+				"index": 6
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.Senkawa",
+				"index": 7
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.Kanamecho",
+				"index": 8
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro",
+				"index": 9
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.Zoshigaya",
+				"index": 10
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.NishiWaseda",
+				"index": 11
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.HigashiShinjuku",
+				"index": 12
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome",
+				"index": 13
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.KitaSando",
+				"index": 14
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.MeijiJingumae",
+				"index": 15
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Fukutoshin.Shibuya",
+				"index": 16
+			}
+		],
+		"ascendingDir": "odpt.RailDirection:TokyoMetro.Shibuya",
+		"descendingDir": "odpt.RailDirection:TokyoMetro.Wakoshi"
+	},
+	{
+		"id": "odpt.Railway:TokyoMetro.Ginza",
+		"title": "銀座線",
+		"operator": "odpt.Operator:TokyoMetro",
+		"stations": [
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Shibuya",
+				"index": 1
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.OmoteSando",
+				"index": 2
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Gaiemmae",
+				"index": 3
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.AoyamaItchome",
+				"index": 4
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke",
+				"index": 5
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.TameikeSanno",
+				"index": 6
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Toranomon",
+				"index": 7
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Shimbashi",
+				"index": 8
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Ginza",
+				"index": 9
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Kyobashi",
+				"index": 10
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Nihombashi",
+				"index": 11
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Mitsukoshimae",
+				"index": 12
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Kanda",
+				"index": 13
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Suehirocho",
+				"index": 14
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.UenoHirokoji",
+				"index": 15
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Ueno",
+				"index": 16
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Inaricho",
+				"index": 17
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Tawaramachi",
+				"index": 18
+			},
+			{
+				"id": "odpt.Station:TokyoMetro.Ginza.Asakusa",
+				"index": 19
+			}
+		],
+		"ascendingDir": "odpt.RailDirection:TokyoMetro.Asakusa",
+		"descendingDir": "odpt.RailDirection:TokyoMetro.Shibuya"
+	}
+]

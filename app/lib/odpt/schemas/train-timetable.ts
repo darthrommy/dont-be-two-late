@@ -70,3 +70,4 @@ export const OdptTrainTimetable = {
 	params: params,
 	data: data,
 } as const satisfies EndpointConfig;
+export type OdptTrainTimetableType = z.infer<typeof data>;

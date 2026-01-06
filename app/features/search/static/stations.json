@@ -1,0 +1,357 @@
+[
+	{
+		"id": "odpt.Station:JR-East.SaikyoKawagoe.Shibuya",
+		"title": "渋谷",
+		"operator": "odpt.Operator:JR-East",
+		"railway": "odpt.Railway:JR-East.SaikyoKawagoe",
+		"timetable": [
+			"odpt.StationTimetable:JR-East.SaikyoKawagoe.Shibuya.Southbound.Weekday",
+			"odpt.StationTimetable:JR-East.SaikyoKawagoe.Shibuya.Southbound.SaturdayHoliday",
+			"odpt.StationTimetable:JR-East.SaikyoKawagoe.Shibuya.Northbound.Weekday",
+			"odpt.StationTimetable:JR-East.SaikyoKawagoe.Shibuya.Northbound.SaturdayHoliday"
+		],
+		"connection": [
+			"odpt.Station:JR-East.ShonanShinjuku.Shibuya",
+			"odpt.Station:JR-East.Yamanote.Shibuya",
+			"odpt.Station:TokyoMetro.Fukutoshin.Shibuya",
+			"odpt.Station:TokyoMetro.Ginza.Shibuya"
+		]
+	},
+	{
+		"id": "odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+		"title": "新宿",
+		"operator": "odpt.Operator:JR-East",
+		"railway": "odpt.Railway:JR-East.SaikyoKawagoe",
+		"timetable": [
+			"odpt.StationTimetable:JR-East.SaikyoKawagoe.Shinjuku.Southbound.Weekday",
+			"odpt.StationTimetable:JR-East.SaikyoKawagoe.Shinjuku.Southbound.SaturdayHoliday",
+			"odpt.StationTimetable:JR-East.SaikyoKawagoe.Shinjuku.Northbound.Weekday",
+			"odpt.StationTimetable:JR-East.SaikyoKawagoe.Shinjuku.Northbound.SaturdayHoliday"
+		],
+		"connection": [
+			"odpt.Station:JR-East.ShonanShinjuku.Shinjuku",
+			"odpt.Station:JR-East.Yamanote.Shinjuku",
+			"odpt.Station:Toei.Oedo.Shinjuku",
+			"odpt.Station:Toei.Oedo.ShinjukuNishiguchi",
+			"odpt.Station:TokyoMetro.Marunouchi.Shinjuku"
+		]
+	},
+	{
+		"id": "odpt.Station:JR-East.ShonanShinjuku.Shibuya",
+		"title": "渋谷",
+		"operator": "odpt.Operator:JR-East",
+		"railway": "odpt.Railway:JR-East.ShonanShinjuku",
+		"timetable": [
+			"odpt.StationTimetable:JR-East.ShonanShinjuku.Shibuya.Southbound.Weekday",
+			"odpt.StationTimetable:JR-East.ShonanShinjuku.Shibuya.Southbound.SaturdayHoliday",
+			"odpt.StationTimetable:JR-East.ShonanShinjuku.Shibuya.Northbound.Weekday",
+			"odpt.StationTimetable:JR-East.ShonanShinjuku.Shibuya.Northbound.SaturdayHoliday"
+		],
+		"connection": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shibuya",
+			"odpt.Station:JR-East.Yamanote.Shibuya",
+			"odpt.Station:TokyoMetro.Fukutoshin.Shibuya",
+			"odpt.Station:TokyoMetro.Ginza.Shibuya"
+		]
+	},
+	{
+		"id": "odpt.Station:JR-East.ShonanShinjuku.Shinjuku",
+		"title": "新宿",
+		"operator": "odpt.Operator:JR-East",
+		"railway": "odpt.Railway:JR-East.ShonanShinjuku",
+		"timetable": [
+			"odpt.StationTimetable:JR-East.ShonanShinjuku.Shinjuku.Southbound.Weekday",
+			"odpt.StationTimetable:JR-East.ShonanShinjuku.Shinjuku.Southbound.SaturdayHoliday",
+			"odpt.StationTimetable:JR-East.ShonanShinjuku.Shinjuku.Northbound.Weekday",
+			"odpt.StationTimetable:JR-East.ShonanShinjuku.Shinjuku.Northbound.SaturdayHoliday"
+		],
+		"connection": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+			"odpt.Station:JR-East.Yamanote.Shinjuku",
+			"odpt.Station:Toei.Oedo.Shinjuku",
+			"odpt.Station:Toei.Oedo.ShinjukuNishiguchi",
+			"odpt.Station:TokyoMetro.Marunouchi.Shinjuku"
+		]
+	},
+	{
+		"id": "odpt.Station:JR-East.Yamanote.Shinjuku",
+		"title": "新宿",
+		"operator": "odpt.Operator:JR-East",
+		"railway": "odpt.Railway:JR-East.Yamanote",
+		"timetable": [
+			"odpt.StationTimetable:JR-East.Yamanote.Shinjuku.InnerLoop.Weekday",
+			"odpt.StationTimetable:JR-East.Yamanote.Shinjuku.InnerLoop.SaturdayHoliday",
+			"odpt.StationTimetable:JR-East.Yamanote.Shinjuku.OuterLoop.Weekday",
+			"odpt.StationTimetable:JR-East.Yamanote.Shinjuku.OuterLoop.SaturdayHoliday"
+		],
+		"connection": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+			"odpt.Station:JR-East.ShonanShinjuku.Shinjuku",
+			"odpt.Station:Toei.Oedo.Shinjuku",
+			"odpt.Station:Toei.Oedo.ShinjukuNishiguchi",
+			"odpt.Station:TokyoMetro.Marunouchi.Shinjuku"
+		]
+	},
+	{
+		"id": "odpt.Station:JR-East.Yamanote.Shibuya",
+		"title": "渋谷",
+		"operator": "odpt.Operator:JR-East",
+		"railway": "odpt.Railway:JR-East.Yamanote",
+		"timetable": [
+			"odpt.StationTimetable:JR-East.Yamanote.Shibuya.InnerLoop.Weekday",
+			"odpt.StationTimetable:JR-East.Yamanote.Shibuya.InnerLoop.SaturdayHoliday",
+			"odpt.StationTimetable:JR-East.Yamanote.Shibuya.OuterLoop.Weekday",
+			"odpt.StationTimetable:JR-East.Yamanote.Shibuya.OuterLoop.SaturdayHoliday"
+		],
+		"connection": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shibuya",
+			"odpt.Station:JR-East.ShonanShinjuku.Shibuya",
+			"odpt.Station:TokyoMetro.Fukutoshin.Shibuya",
+			"odpt.Station:TokyoMetro.Ginza.Shibuya"
+		]
+	},
+	{
+		"id": "odpt.Station:Toei.Oedo.HigashiShinjuku",
+		"title": "東新宿",
+		"operator": "odpt.Operator:Toei",
+		"railway": "odpt.Railway:Toei.Oedo",
+		"timetable": [
+			"odpt.StationTimetable:Toei.Oedo.HigashiShinjuku.InnerLoop.Weekday",
+			"odpt.StationTimetable:Toei.Oedo.HigashiShinjuku.InnerLoop.SaturdayHoliday",
+			"odpt.StationTimetable:Toei.Oedo.HigashiShinjuku.OuterLoop.Weekday",
+			"odpt.StationTimetable:Toei.Oedo.HigashiShinjuku.OuterLoop.SaturdayHoliday"
+		],
+		"connection": ["odpt.Station:TokyoMetro.Fukutoshin.HigashiShinjuku"]
+	},
+	{
+		"id": "odpt.Station:Toei.Oedo.HongoSanchome",
+		"title": "本郷三丁目",
+		"operator": "odpt.Operator:Toei",
+		"railway": "odpt.Railway:Toei.Oedo",
+		"timetable": [
+			"odpt.StationTimetable:Toei.Oedo.HongoSanchome.InnerLoop.Weekday",
+			"odpt.StationTimetable:Toei.Oedo.HongoSanchome.InnerLoop.SaturdayHoliday",
+			"odpt.StationTimetable:Toei.Oedo.HongoSanchome.OuterLoop.Weekday",
+			"odpt.StationTimetable:Toei.Oedo.HongoSanchome.OuterLoop.SaturdayHoliday"
+		],
+		"connection": ["odpt.Station:TokyoMetro.Marunouchi.HongoSanchome"]
+	},
+	{
+		"id": "odpt.Station:Toei.Oedo.ShinjukuNishiguchi",
+		"title": "新宿西口",
+		"operator": "odpt.Operator:Toei",
+		"railway": "odpt.Railway:Toei.Oedo",
+		"timetable": [
+			"odpt.StationTimetable:Toei.Oedo.ShinjukuNishiguchi.InnerLoop.Weekday",
+			"odpt.StationTimetable:Toei.Oedo.ShinjukuNishiguchi.InnerLoop.SaturdayHoliday",
+			"odpt.StationTimetable:Toei.Oedo.ShinjukuNishiguchi.OuterLoop.Weekday",
+			"odpt.StationTimetable:Toei.Oedo.ShinjukuNishiguchi.OuterLoop.SaturdayHoliday"
+		],
+		"connection": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+			"odpt.Station:JR-East.ShonanShinjuku.Shinjuku",
+			"odpt.Station:JR-East.Yamanote.Shinjuku",
+			"odpt.Station:TokyoMetro.Marunouchi.Shinjuku"
+		]
+	},
+	{
+		"id": "odpt.Station:Toei.Oedo.Shinjuku",
+		"title": "新宿",
+		"operator": "odpt.Operator:Toei",
+		"railway": "odpt.Railway:Toei.Oedo",
+		"timetable": [
+			"odpt.StationTimetable:Toei.Oedo.Shinjuku.InnerLoop.Weekday",
+			"odpt.StationTimetable:Toei.Oedo.Shinjuku.InnerLoop.SaturdayHoliday",
+			"odpt.StationTimetable:Toei.Oedo.Shinjuku.OuterLoop.Weekday",
+			"odpt.StationTimetable:Toei.Oedo.Shinjuku.OuterLoop.SaturdayHoliday"
+		],
+		"connection": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+			"odpt.Station:JR-East.ShonanShinjuku.Shinjuku",
+			"odpt.Station:JR-East.Yamanote.Shinjuku"
+		]
+	},
+	{
+		"id": "odpt.Station:Toei.Oedo.UenoOkachimachi",
+		"title": "上野御徒町",
+		"operator": "odpt.Operator:Toei",
+		"railway": "odpt.Railway:Toei.Oedo",
+		"timetable": [
+			"odpt.StationTimetable:Toei.Oedo.UenoOkachimachi.InnerLoop.Weekday",
+			"odpt.StationTimetable:Toei.Oedo.UenoOkachimachi.InnerLoop.SaturdayHoliday",
+			"odpt.StationTimetable:Toei.Oedo.UenoOkachimachi.OuterLoop.Weekday",
+			"odpt.StationTimetable:Toei.Oedo.UenoOkachimachi.OuterLoop.SaturdayHoliday"
+		],
+		"connection": [
+			"odpt.Station:JR-East.Yamanote.Okachimachi",
+			"odpt.Station:TokyoMetro.Ginza.UenoHirokoji"
+		]
+	},
+	{
+		"id": "odpt.Station:TokyoMetro.Marunouchi.Shinjuku",
+		"title": "新宿",
+		"operator": "odpt.Operator:TokyoMetro",
+		"railway": "odpt.Railway:TokyoMetro.Marunouchi",
+		"timetable": [
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.Shinjuku.TokyoMetro.Ogikubo.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.Shinjuku.TokyoMetro.Ogikubo.SaturdayHoliday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.Shinjuku.TokyoMetro.Ikebukuro.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.Shinjuku.TokyoMetro.Ikebukuro.SaturdayHoliday"
+		],
+		"connection": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+			"odpt.Station:JR-East.ShonanShinjuku.Shinjuku",
+			"odpt.Station:JR-East.Yamanote.Shinjuku",
+			"odpt.Station:Toei.Oedo.ShinjukuNishiguchi"
+		]
+	},
+	{
+		"id": "odpt.Station:TokyoMetro.Fukutoshin.HigashiShinjuku",
+		"title": "東新宿",
+		"operator": "odpt.Operator:TokyoMetro",
+		"railway": "odpt.Railway:TokyoMetro.Fukutoshin",
+		"timetable": [
+			"odpt.StationTimetable:TokyoMetro.Fukutoshin.HigashiShinjuku.TokyoMetro.Wakoshi.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Fukutoshin.HigashiShinjuku.TokyoMetro.Wakoshi.SaturdayHoliday",
+			"odpt.StationTimetable:TokyoMetro.Fukutoshin.HigashiShinjuku.TokyoMetro.Shibuya.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Fukutoshin.HigashiShinjuku.TokyoMetro.Shibuya.SaturdayHoliday"
+		],
+		"connection": ["odpt.Station:Toei.Oedo.HigashiShinjuku"]
+	},
+	{
+		"id": "odpt.Station:TokyoMetro.Fukutoshin.Shibuya",
+		"title": "渋谷",
+		"operator": "odpt.Operator:TokyoMetro",
+		"railway": "odpt.Railway:TokyoMetro.Fukutoshin",
+		"timetable": [
+			"odpt.StationTimetable:TokyoMetro.Fukutoshin.Shibuya.TokyoMetro.Wakoshi.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Fukutoshin.Shibuya.TokyoMetro.Wakoshi.SaturdayHoliday"
+		],
+		"connection": [
+			"odpt.Station:TokyoMetro.Ginza.Shibuya",
+			"odpt.Station:JR-East.SaikyoKawagoe.Shibuya",
+			"odpt.Station:JR-East.ShonanShinjuku.Shibuya",
+			"odpt.Station:JR-East.Yamanote.Shibuya"
+		]
+	},
+	{
+		"id": "odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome",
+		"title": "新宿三丁目",
+		"operator": "odpt.Operator:TokyoMetro",
+		"railway": "odpt.Railway:TokyoMetro.Fukutoshin",
+		"timetable": [
+			"odpt.StationTimetable:TokyoMetro.Fukutoshin.ShinjukuSanchome.TokyoMetro.Wakoshi.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Fukutoshin.ShinjukuSanchome.TokyoMetro.Wakoshi.SaturdayHoliday",
+			"odpt.StationTimetable:TokyoMetro.Fukutoshin.ShinjukuSanchome.TokyoMetro.Shibuya.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Fukutoshin.ShinjukuSanchome.TokyoMetro.Shibuya.SaturdayHoliday"
+		],
+		"connection": ["odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome"]
+	},
+	{
+		"id": "odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke",
+		"title": "赤坂見附",
+		"operator": "odpt.Operator:TokyoMetro",
+		"railway": "odpt.Railway:TokyoMetro.Ginza",
+		"timetable": [
+			"odpt.StationTimetable:TokyoMetro.Ginza.AkasakaMitsuke.TokyoMetro.Shibuya.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Ginza.AkasakaMitsuke.TokyoMetro.Shibuya.SaturdayHoliday",
+			"odpt.StationTimetable:TokyoMetro.Ginza.AkasakaMitsuke.TokyoMetro.Asakusa.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Ginza.AkasakaMitsuke.TokyoMetro.Asakusa.SaturdayHoliday"
+		],
+		"connection": ["odpt.Station:TokyoMetro.Marunouchi.AkasakaMitsuke"]
+	},
+	{
+		"id": "odpt.Station:TokyoMetro.Ginza.Ginza",
+		"title": "銀座",
+		"operator": "odpt.Operator:TokyoMetro",
+		"railway": "odpt.Railway:TokyoMetro.Ginza",
+		"timetable": [
+			"odpt.StationTimetable:TokyoMetro.Ginza.Ginza.TokyoMetro.Shibuya.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Ginza.Ginza.TokyoMetro.Shibuya.SaturdayHoliday",
+			"odpt.StationTimetable:TokyoMetro.Ginza.Ginza.TokyoMetro.Asakusa.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Ginza.Ginza.TokyoMetro.Asakusa.SaturdayHoliday"
+		],
+		"connection": ["odpt.Station:TokyoMetro.Marunouchi.Ginza"]
+	},
+	{
+		"id": "odpt.Station:TokyoMetro.Ginza.Shibuya",
+		"title": "渋谷",
+		"operator": "odpt.Operator:TokyoMetro",
+		"railway": "odpt.Railway:TokyoMetro.Ginza",
+		"timetable": [
+			"odpt.StationTimetable:TokyoMetro.Ginza.Shibuya.TokyoMetro.Asakusa.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Ginza.Shibuya.TokyoMetro.Asakusa.SaturdayHoliday"
+		],
+		"connection": [
+			"odpt.Station:TokyoMetro.Fukutoshin.Shibuya",
+			"odpt.Station:JR-East.SaikyoKawagoe.Shibuya",
+			"odpt.Station:JR-East.ShonanShinjuku.Shibuya",
+			"odpt.Station:JR-East.Yamanote.Shibuya"
+		]
+	},
+	{
+		"id": "odpt.Station:TokyoMetro.Ginza.UenoHirokoji",
+		"title": "上野広小路",
+		"operator": "odpt.Operator:TokyoMetro",
+		"railway": "odpt.Railway:TokyoMetro.Ginza",
+		"timetable": [
+			"odpt.StationTimetable:TokyoMetro.Ginza.UenoHirokoji.TokyoMetro.Shibuya.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Ginza.UenoHirokoji.TokyoMetro.Shibuya.SaturdayHoliday",
+			"odpt.StationTimetable:TokyoMetro.Ginza.UenoHirokoji.TokyoMetro.Asakusa.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Ginza.UenoHirokoji.TokyoMetro.Asakusa.SaturdayHoliday"
+		],
+		"connection": ["odpt.Station:Toei.Oedo.UenoOkachimachi"]
+	},
+	{
+		"id": "odpt.Station:TokyoMetro.Marunouchi.AkasakaMitsuke",
+		"title": "赤坂見附",
+		"operator": "odpt.Operator:TokyoMetro",
+		"railway": "odpt.Railway:TokyoMetro.Marunouchi",
+		"timetable": [
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.AkasakaMitsuke.TokyoMetro.Ogikubo.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.AkasakaMitsuke.TokyoMetro.Ogikubo.SaturdayHoliday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.AkasakaMitsuke.TokyoMetro.Ikebukuro.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.AkasakaMitsuke.TokyoMetro.Ikebukuro.SaturdayHoliday"
+		],
+		"connection": ["odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke"]
+	},
+	{
+		"id": "odpt.Station:TokyoMetro.Marunouchi.Ginza",
+		"title": "銀座",
+		"operator": "odpt.Operator:TokyoMetro",
+		"railway": "odpt.Railway:TokyoMetro.Marunouchi",
+		"timetable": [
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.Ginza.TokyoMetro.Ogikubo.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.Ginza.TokyoMetro.Ogikubo.SaturdayHoliday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.Ginza.TokyoMetro.Ikebukuro.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.Ginza.TokyoMetro.Ikebukuro.SaturdayHoliday"
+		],
+		"connection": ["odpt.Station:TokyoMetro.Ginza.Ginza"]
+	},
+	{
+		"id": "odpt.Station:TokyoMetro.Marunouchi.HongoSanchome",
+		"title": "本郷三丁目",
+		"operator": "odpt.Operator:TokyoMetro",
+		"railway": "odpt.Railway:TokyoMetro.Marunouchi",
+		"timetable": [
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.HongoSanchome.TokyoMetro.Ogikubo.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.HongoSanchome.TokyoMetro.Ogikubo.SaturdayHoliday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.HongoSanchome.TokyoMetro.Ikebukuro.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.HongoSanchome.TokyoMetro.Ikebukuro.SaturdayHoliday"
+		],
+		"connection": ["odpt.Station:Toei.Oedo.HongoSanchome"]
+	},
+	{
+		"id": "odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome",
+		"title": "新宿三丁目",
+		"operator": "odpt.Operator:TokyoMetro",
+		"railway": "odpt.Railway:TokyoMetro.Marunouchi",
+		"timetable": [
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.ShinjukuSanchome.TokyoMetro.Ogikubo.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.ShinjukuSanchome.TokyoMetro.Ogikubo.SaturdayHoliday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.ShinjukuSanchome.TokyoMetro.Ikebukuro.Weekday",
+			"odpt.StationTimetable:TokyoMetro.Marunouchi.ShinjukuSanchome.TokyoMetro.Ikebukuro.SaturdayHoliday"
+		],
+		"connection": ["odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome"]
+	}
+]
