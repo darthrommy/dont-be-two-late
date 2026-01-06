@@ -9,6 +9,7 @@
 		"usernamehw.errorlens",
 		"github.vscode-github-actions",
 		"GitHub.vscode-pull-request-github",
-		"christian-kohler.path-intellisense"
+		"christian-kohler.path-intellisense",
+		"ReneSaarsoo.sql-formatter-vsc"
 	]
 }

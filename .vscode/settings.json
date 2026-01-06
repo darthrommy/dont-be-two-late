@@ -9,5 +9,6 @@
 		"source.fixAll.biome": "always",
 		"source.biome": "always"
 	},
-	"editor.formatOnSave": true
+	"editor.formatOnSave": true,
+	"SQL-Formatter-VSCode.dialect": "sqlite"
 }

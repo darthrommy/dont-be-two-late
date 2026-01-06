@@ -3,6 +3,9 @@ import { z } from "zod/mini";
 type GetTaxiFareParams = {
 	from: { lat: number; lng: number };
 	to: { lat: number; lng: number };
+	/**
+	 * Google Maps API Key
+	 */
 	apiKey: string;
 };
 
@@ -15,6 +18,11 @@ const MapsAPIResponse = z.object({
 	),
 });
 
+/**
+ * Get taxi fare estimate between two locations using Google Maps API
+ * @param param0 From and to coordinates along with API key
+ * @returns Estimated taxi fare in JPY
+ */
 export const getTaxiFare = async ({ from, to, apiKey }: GetTaxiFareParams) => {
 	const url = "https://routes.googleapis.com/directions/v2:computeRoutes";
 	const body = {
