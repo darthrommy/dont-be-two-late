@@ -187,7 +187,7 @@ type Database = {
  */
 export const getDbInstance = (env: Env) => {
 	return new Kysely<Database>({
-		dialect: new D1Dialect({ database: env.DB }),
+		dialect: new D1Dialect({ database: env.odpt_challenge }),
 		plugins: [new CamelCasePlugin()],
 	});
 };
