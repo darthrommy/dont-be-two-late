@@ -27,6 +27,9 @@ export interface T_Checking {
 	operatorId: string;
 	departureTime: number;
 	fare: number;
+	fromLat: number;
+	fromLon: number;
+	// taxiFare: number; // optional column for future use
 }
 
 type Database = {

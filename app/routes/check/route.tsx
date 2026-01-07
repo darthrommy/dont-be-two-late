@@ -58,6 +58,8 @@ export const loader = async ({ request, context }: Route.LoaderArgs) => {
 	// get current availability
 	const check = await getCheck(context.db, sessionId);
 
+	// * you could fetch Station info using check.stationId
+
 	return check;
 };
 
@@ -167,6 +169,11 @@ export const action = async ({ request, context }: Route.ActionArgs) => {
 		fare: estimated.fare,
 		departureTime: estimated.departureTime,
 		operatorId: estimated.firstOperator,
+		fromLat: parsed.value.latitude,
+		fromLon: parsed.value.longitude,
+		// * you could calculate taxi fare using `getTaxiFare` function
+		// * if you want to implement this, call me again :)
+		// taxiFare: estimated.taxiFare,
 	});
 
 	return {
