@@ -7,30 +7,6 @@
 		"direction": "odpt.RailDirection:Northbound",
 		"timetable": [
 			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2069F",
-				"time": 1269
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.280M",
-				"time": 1279
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2107F",
-				"time": 1289
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.282M",
-				"time": 1300
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2117F",
-				"time": 1308
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.284M",
-				"time": 1318
-			},
-			{
 				"id": "odpt.Train:JR-East.SaikyoKawagoe.2141F",
 				"time": 1328
 			},
@@ -71,30 +47,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:Southbound",
 		"timetable": [
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.137M",
-				"time": 1261
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2004F",
-				"time": 1273
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.283M",
-				"time": 1281
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2018F",
-				"time": 1292
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.139M",
-				"time": 1301
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2062F",
-				"time": 1311
-			},
 			{
 				"id": "odpt.Train:JR-East.SaikyoKawagoe.141M",
 				"time": 1321
@@ -144,42 +96,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:Northbound",
 		"timetable": [
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2171K",
-				"time": 1267
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2069F",
-				"time": 1274
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2183K",
-				"time": 1277
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2137K",
-				"time": 1287
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2107F",
-				"time": 1294
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2187K",
-				"time": 1297
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2165K",
-				"time": 1307
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2117F",
-				"time": 1314
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2185K",
-				"time": 1317
-			},
 			{
 				"id": "odpt.Train:JR-East.SaikyoKawagoe.2201K",
 				"time": 1326
@@ -254,30 +170,6 @@
 		"direction": "odpt.RailDirection:Southbound",
 		"timetable": [
 			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2004F",
-				"time": 1268
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.283M",
-				"time": 1276
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2018F",
-				"time": 1287
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.139M",
-				"time": 1296
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.2062F",
-				"time": 1307
-			},
-			{
-				"id": "odpt.Train:JR-East.SaikyoKawagoe.141M",
-				"time": 1316
-			},
-			{
 				"id": "odpt.Train:JR-East.SaikyoKawagoe.2148F",
 				"time": 1328
 			},
@@ -323,26 +215,6 @@
 		"direction": "odpt.RailDirection:Northbound",
 		"timetable": [
 			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2860Y",
-				"time": 1263
-			},
-			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2250M",
-				"time": 1274
-			},
-			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2558Y",
-				"time": 1277
-			},
-			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2862Y",
-				"time": 1296
-			},
-			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2560Y",
-				"time": 1315
-			},
-			{
 				"id": "odpt.Train:JR-East.ShonanShinjuku.2252M",
 				"time": 1324
 			},
@@ -376,18 +248,6 @@
 		"direction": "odpt.RailDirection:Southbound",
 		"timetable": [
 			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2861Y",
-				"time": 1270
-			},
-			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2559Y",
-				"time": 1287
-			},
-			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2561Y",
-				"time": 1309
-			},
-			{
 				"id": "odpt.Train:JR-East.ShonanShinjuku.2863Y",
 				"time": 1325
 			},
@@ -412,18 +272,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:Northbound",
 		"timetable": [
-			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2860Y",
-				"time": 1269
-			},
-			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2558Y",
-				"time": 1283
-			},
-			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2862Y",
-				"time": 1303
-			},
 			{
 				"id": "odpt.Train:JR-East.ShonanShinjuku.2560Y",
 				"time": 1321
@@ -454,18 +302,6 @@
 		"direction": "odpt.RailDirection:Southbound",
 		"timetable": [
 			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2861Y",
-				"time": 1265
-			},
-			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2559Y",
-				"time": 1281
-			},
-			{
-				"id": "odpt.Train:JR-East.ShonanShinjuku.2561Y",
-				"time": 1304
-			},
-			{
 				"id": "odpt.Train:JR-East.ShonanShinjuku.2863Y",
 				"time": 1320
 			},
@@ -490,46 +326,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:InnerLoop",
 		"timetable": [
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2010G",
-				"time": 1261
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2068G",
-				"time": 1267
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2060G",
-				"time": 1272
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2012G",
-				"time": 1279
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2004G",
-				"time": 1287
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2014G",
-				"time": 1292
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2006G",
-				"time": 1299
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2064G",
-				"time": 1305
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2100G",
-				"time": 1311
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2166G",
-				"time": 1318
-			},
 			{
 				"id": "odpt.Train:JR-East.Yamanote.2116G",
 				"time": 1323
@@ -635,54 +431,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:OuterLoop",
 		"timetable": [
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2031G",
-				"time": 1264
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2003G",
-				"time": 1269
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2007G",
-				"time": 1274
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2127G",
-				"time": 1279
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2117G",
-				"time": 1284
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2101G",
-				"time": 1289
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2133G",
-				"time": 1294
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2109G",
-				"time": 1298
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2121G",
-				"time": 1303
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2161G",
-				"time": 1308
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2125G",
-				"time": 1312
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2105G",
-				"time": 1317
-			},
 			{
 				"id": "odpt.Train:JR-East.Yamanote.2135G",
 				"time": 1322
@@ -813,46 +561,6 @@
 		"direction": "odpt.RailDirection:InnerLoop",
 		"timetable": [
 			{
-				"id": "odpt.Train:JR-East.Yamanote.2016G",
-				"time": 1263
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2010G",
-				"time": 1268
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2068G",
-				"time": 1274
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2060G",
-				"time": 1279
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2012G",
-				"time": 1286
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2004G",
-				"time": 1294
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2014G",
-				"time": 1299
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2006G",
-				"time": 1306
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2064G",
-				"time": 1313
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2100G",
-				"time": 1318
-			},
-			{
 				"id": "odpt.Train:JR-East.Yamanote.2166G",
 				"time": 1325
 			},
@@ -961,58 +669,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:OuterLoop",
 		"timetable": [
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2003G",
-				"time": 1261
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2007G",
-				"time": 1266
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2127G",
-				"time": 1271
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2117G",
-				"time": 1276
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2101G",
-				"time": 1281
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2133G",
-				"time": 1286
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2109G",
-				"time": 1291
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2121G",
-				"time": 1296
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2161G",
-				"time": 1301
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2125G",
-				"time": 1305
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2105G",
-				"time": 1310
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2135G",
-				"time": 1314
-			},
-			{
-				"id": "odpt.Train:JR-East.Yamanote.2123G",
-				"time": 1318
-			},
 			{
 				"id": "odpt.Train:JR-East.Yamanote.2131G",
 				"time": 1323
@@ -1135,38 +791,6 @@
 		"direction": "odpt.RailDirection:InnerLoop",
 		"timetable": [
 			{
-				"id": "odpt.Train:Toei.Oedo.1902A",
-				"time": 1262
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.1903A",
-				"time": 1271
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2005A",
-				"time": 1279
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2006A",
-				"time": 1286
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2007A",
-				"time": 1293
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2008A",
-				"time": 1300
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2009A",
-				"time": 1308
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2011A",
-				"time": 1315
-			},
-			{
 				"id": "odpt.Train:Toei.Oedo.2012A",
 				"time": 1321
 			},
@@ -1239,34 +863,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:OuterLoop",
 		"timetable": [
-			{
-				"id": "odpt.Train:Toei.Oedo.2031B",
-				"time": 1264
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2132B",
-				"time": 1271
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2101B",
-				"time": 1278
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2102B",
-				"time": 1285
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2103B",
-				"time": 1293
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2105B",
-				"time": 1302
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2106B",
-				"time": 1312
-			},
 			{
 				"id": "odpt.Train:Toei.Oedo.2108B",
 				"time": 1320
@@ -1345,38 +941,6 @@
 		"direction": "odpt.RailDirection:InnerLoop",
 		"timetable": [
 			{
-				"id": "odpt.Train:Toei.Oedo.2005A",
-				"time": 1267
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2006A",
-				"time": 1274
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2007A",
-				"time": 1281
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2008A",
-				"time": 1288
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2009A",
-				"time": 1296
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2011A",
-				"time": 1303
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2012A",
-				"time": 1309
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2014A",
-				"time": 1316
-			},
-			{
 				"id": "odpt.Train:Toei.Oedo.2015A",
 				"time": 1323
 			},
@@ -1441,38 +1005,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:OuterLoop",
 		"timetable": [
-			{
-				"id": "odpt.Train:Toei.Oedo.2028B",
-				"time": 1262
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2029B",
-				"time": 1269
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2031B",
-				"time": 1276
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2132B",
-				"time": 1283
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2101B",
-				"time": 1290
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2102B",
-				"time": 1298
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2103B",
-				"time": 1306
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2105B",
-				"time": 1315
-			},
 			{
 				"id": "odpt.Train:Toei.Oedo.2106B",
 				"time": 1324
@@ -1555,38 +1087,6 @@
 		"direction": "odpt.RailDirection:InnerLoop",
 		"timetable": [
 			{
-				"id": "odpt.Train:Toei.Oedo.1902A",
-				"time": 1265
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.1903A",
-				"time": 1274
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2005A",
-				"time": 1282
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2006A",
-				"time": 1289
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2007A",
-				"time": 1296
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2008A",
-				"time": 1303
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2009A",
-				"time": 1311
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2011A",
-				"time": 1318
-			},
-			{
 				"id": "odpt.Train:Toei.Oedo.2012A",
 				"time": 1324
 			},
@@ -1660,38 +1160,6 @@
 		"direction": "odpt.RailDirection:OuterLoop",
 		"timetable": [
 			{
-				"id": "odpt.Train:Toei.Oedo.2031B",
-				"time": 1261
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2132B",
-				"time": 1268
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2101B",
-				"time": 1275
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2102B",
-				"time": 1283
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2103B",
-				"time": 1291
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2105B",
-				"time": 1300
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2106B",
-				"time": 1309
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2108B",
-				"time": 1317
-			},
-			{
 				"id": "odpt.Train:Toei.Oedo.2209B",
 				"time": 1324
 			},
@@ -1764,42 +1232,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:InnerLoop",
 		"timetable": [
-			{
-				"id": "odpt.Train:Toei.Oedo.2011A",
-				"time": 1260
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2012A",
-				"time": 1266
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2014A",
-				"time": 1273
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2015A",
-				"time": 1280
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2116A",
-				"time": 1287
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2117A",
-				"time": 1294
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2118A",
-				"time": 1301
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2119A",
-				"time": 1308
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2120A",
-				"time": 1315
-			},
 			{
 				"id": "odpt.Train:Toei.Oedo.2122A",
 				"time": 1322
@@ -1878,42 +1310,6 @@
 		"direction": "odpt.RailDirection:OuterLoop",
 		"timetable": [
 			{
-				"id": "odpt.Train:Toei.Oedo.2022B",
-				"time": 1263
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2023B",
-				"time": 1270
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2024B",
-				"time": 1277
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2025B",
-				"time": 1284
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2026B",
-				"time": 1291
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2027B",
-				"time": 1298
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2028B",
-				"time": 1305
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2029B",
-				"time": 1312
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2031B",
-				"time": 1319
-			},
-			{
 				"id": "odpt.Train:Toei.Oedo.2132B",
 				"time": 1326
 			},
@@ -1991,38 +1387,6 @@
 		"direction": "odpt.RailDirection:InnerLoop",
 		"timetable": [
 			{
-				"id": "odpt.Train:Toei.Oedo.2005A",
-				"time": 1265
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2006A",
-				"time": 1271
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2007A",
-				"time": 1278
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2008A",
-				"time": 1285
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2009A",
-				"time": 1293
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2011A",
-				"time": 1300
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2012A",
-				"time": 1306
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2014A",
-				"time": 1313
-			},
-			{
 				"id": "odpt.Train:Toei.Oedo.2015A",
 				"time": 1320
 			},
@@ -2087,38 +1451,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:OuterLoop",
 		"timetable": [
-			{
-				"id": "odpt.Train:Toei.Oedo.2028B",
-				"time": 1265
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2029B",
-				"time": 1272
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2031B",
-				"time": 1279
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2132B",
-				"time": 1286
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2101B",
-				"time": 1293
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2102B",
-				"time": 1300
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2103B",
-				"time": 1308
-			},
-			{
-				"id": "odpt.Train:Toei.Oedo.2105B",
-				"time": 1317
-			},
 			{
 				"id": "odpt.Train:Toei.Oedo.2106B",
 				"time": 1326
@@ -2200,54 +1532,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:TokyoMetro.Ikebukuro",
 		"timetable": [
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2049",
-				"time": 1260
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2029",
-				"time": 1265
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2007",
-				"time": 1270
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2151",
-				"time": 1275
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2109",
-				"time": 1280
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2113",
-				"time": 1285
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2135",
-				"time": 1289
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2103",
-				"time": 1294
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2131",
-				"time": 1299
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2133",
-				"time": 1305
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2153",
-				"time": 1310
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2155",
-				"time": 1316
-			},
 			{
 				"id": "odpt.Train:TokyoMetro.Marunouchi.B2121",
 				"time": 1321
@@ -2333,54 +1617,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:TokyoMetro.Ogikubo",
 		"timetable": [
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2035",
-				"time": 1261
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2031",
-				"time": 1266
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2033",
-				"time": 1271
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2053",
-				"time": 1276
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2055",
-				"time": 1281
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2021",
-				"time": 1286
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2025",
-				"time": 1293
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2141",
-				"time": 1296
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2111",
-				"time": 1301
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2157",
-				"time": 1306
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2117",
-				"time": 1311
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2127",
-				"time": 1318
-			},
 			{
 				"id": "odpt.Train:TokyoMetro.Marunouchi.A2101",
 				"time": 1321
@@ -2491,34 +1727,6 @@
 		"direction": "odpt.RailDirection:TokyoMetro.Shibuya",
 		"timetable": [
 			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2006K",
-				"time": 1260
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2051K",
-				"time": 1268
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2011S",
-				"time": 1277
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2023K",
-				"time": 1285
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2064K",
-				"time": 1295
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2015K",
-				"time": 1307
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2117S",
-				"time": 1316
-			},
-			{
 				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2121K",
 				"time": 1328
 			},
@@ -2591,34 +1799,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:TokyoMetro.Wakoshi",
 		"timetable": [
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B1957K",
-				"time": 1263
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2059K",
-				"time": 1271
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2013T",
-				"time": 1281
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2013K",
-				"time": 1290
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2014K",
-				"time": 1299
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2057S",
-				"time": 1311
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2016K",
-				"time": 1317
-			},
 			{
 				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2092G",
 				"time": 1324
@@ -2708,46 +1888,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:TokyoMetro.Wakoshi",
 		"timetable": [
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2059K",
-				"time": 1260
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2013T",
-				"time": 1269
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2058K",
-				"time": 1272
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2013K",
-				"time": 1278
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2014K",
-				"time": 1288
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2057S",
-				"time": 1297
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2153K",
-				"time": 1302
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2016K",
-				"time": 1307
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2092G",
-				"time": 1314
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2187S",
-				"time": 1318
-			},
 			{
 				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2104S",
 				"time": 1324
@@ -2842,46 +1982,6 @@
 		"direction": "odpt.RailDirection:TokyoMetro.Shibuya",
 		"timetable": [
 			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2006K",
-				"time": 1262
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A1914M",
-				"time": 1267
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2051K",
-				"time": 1270
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2043S",
-				"time": 1276
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2011S",
-				"time": 1279
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2023K",
-				"time": 1287
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2064K",
-				"time": 1298
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2024M",
-				"time": 1306
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2015K",
-				"time": 1309
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2117S",
-				"time": 1318
-			},
-			{
 				"id": "odpt.Train:TokyoMetro.Fukutoshin.A2085S",
 				"time": 1322
 			},
@@ -2966,42 +2066,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:TokyoMetro.Wakoshi",
 		"timetable": [
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B1957K",
-				"time": 1260
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2059K",
-				"time": 1267
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2013T",
-				"time": 1276
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2058K",
-				"time": 1279
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2013K",
-				"time": 1285
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2014K",
-				"time": 1295
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2057S",
-				"time": 1305
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2153K",
-				"time": 1309
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2016K",
-				"time": 1314
-			},
 			{
 				"id": "odpt.Train:TokyoMetro.Fukutoshin.B2092G",
 				"time": 1321
@@ -3100,54 +2164,6 @@
 		"direction": "odpt.RailDirection:TokyoMetro.Asakusa",
 		"timetable": [
 			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2043",
-				"time": 1262
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2001",
-				"time": 1267
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2129",
-				"time": 1272
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2125",
-				"time": 1277
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2115",
-				"time": 1282
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2127",
-				"time": 1287
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2147",
-				"time": 1292
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2103",
-				"time": 1297
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2137",
-				"time": 1302
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2139",
-				"time": 1307
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2133",
-				"time": 1312
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2141",
-				"time": 1318
-			},
-			{
 				"id": "odpt.Train:TokyoMetro.Ginza.B2111",
 				"time": 1323
 			},
@@ -3236,54 +2252,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:TokyoMetro.Shibuya",
 		"timetable": [
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2015",
-				"time": 1264
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2027",
-				"time": 1269
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2047",
-				"time": 1274
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2003",
-				"time": 1279
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2037",
-				"time": 1284
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2139",
-				"time": 1289
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2133",
-				"time": 1294
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2141",
-				"time": 1299
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2111",
-				"time": 1304
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2145",
-				"time": 1309
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2121",
-				"time": 1314
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2143",
-				"time": 1319
-			},
 			{
 				"id": "odpt.Train:TokyoMetro.Ginza.A2101",
 				"time": 1324
@@ -3377,54 +2345,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:TokyoMetro.Asakusa",
 		"timetable": [
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2045",
-				"time": 1260
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2021",
-				"time": 1265
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2043",
-				"time": 1270
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2001",
-				"time": 1275
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2129",
-				"time": 1280
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2125",
-				"time": 1285
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2115",
-				"time": 1290
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2127",
-				"time": 1295
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2147",
-				"time": 1300
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2103",
-				"time": 1305
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2137",
-				"time": 1310
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2139",
-				"time": 1315
-			},
 			{
 				"id": "odpt.Train:TokyoMetro.Ginza.B2133",
 				"time": 1320
@@ -3523,54 +2443,6 @@
 		"direction": "odpt.RailDirection:TokyoMetro.Shibuya",
 		"timetable": [
 			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2027",
-				"time": 1262
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2047",
-				"time": 1267
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2003",
-				"time": 1272
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2037",
-				"time": 1277
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2139",
-				"time": 1282
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2133",
-				"time": 1287
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2141",
-				"time": 1292
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2111",
-				"time": 1297
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2145",
-				"time": 1302
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2121",
-				"time": 1307
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2143",
-				"time": 1312
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2101",
-				"time": 1317
-			},
-			{
 				"id": "odpt.Train:TokyoMetro.Ginza.A2129",
 				"time": 1322
 			},
@@ -3660,50 +2532,6 @@
 		"direction": "odpt.RailDirection:TokyoMetro.Asakusa",
 		"timetable": [
 			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2129",
-				"time": 1264
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2125",
-				"time": 1269
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2115",
-				"time": 1274
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2127",
-				"time": 1279
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2147",
-				"time": 1284
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2103",
-				"time": 1289
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2137",
-				"time": 1294
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2139",
-				"time": 1299
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2133",
-				"time": 1304
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2141",
-				"time": 1310
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2111",
-				"time": 1315
-			},
-			{
 				"id": "odpt.Train:TokyoMetro.Ginza.B2245",
 				"time": 1321
 			},
@@ -3788,54 +2616,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:TokyoMetro.Asakusa",
 		"timetable": [
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2041",
-				"time": 1262
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2011",
-				"time": 1266
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2045",
-				"time": 1270
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2021",
-				"time": 1275
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2043",
-				"time": 1280
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2001",
-				"time": 1285
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2129",
-				"time": 1290
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2125",
-				"time": 1295
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2115",
-				"time": 1300
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2127",
-				"time": 1305
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2147",
-				"time": 1310
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.B2103",
-				"time": 1315
-			},
 			{
 				"id": "odpt.Train:TokyoMetro.Ginza.B2137",
 				"time": 1320
@@ -3942,54 +2722,6 @@
 		"direction": "odpt.RailDirection:TokyoMetro.Shibuya",
 		"timetable": [
 			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2003",
-				"time": 1262
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2037",
-				"time": 1267
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2139",
-				"time": 1272
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2133",
-				"time": 1277
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2141",
-				"time": 1282
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2111",
-				"time": 1287
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2145",
-				"time": 1292
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2121",
-				"time": 1297
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2143",
-				"time": 1302
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2101",
-				"time": 1307
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2129",
-				"time": 1312
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Ginza.A2125",
-				"time": 1317
-			},
-			{
 				"id": "odpt.Train:TokyoMetro.Ginza.A2115",
 				"time": 1322
 			},
@@ -4070,54 +2802,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:TokyoMetro.Ikebukuro",
 		"timetable": [
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2023",
-				"time": 1260
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2019",
-				"time": 1265
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2049",
-				"time": 1270
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2029",
-				"time": 1275
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2007",
-				"time": 1280
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2151",
-				"time": 1285
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2109",
-				"time": 1290
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2113",
-				"time": 1294
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2135",
-				"time": 1299
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2103",
-				"time": 1304
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2131",
-				"time": 1309
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2133",
-				"time": 1315
-			},
 			{
 				"id": "odpt.Train:TokyoMetro.Marunouchi.B2153",
 				"time": 1320
@@ -4207,54 +2891,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:TokyoMetro.Ogikubo",
 		"timetable": [
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2033",
-				"time": 1262
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2053",
-				"time": 1267
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2055",
-				"time": 1272
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2021",
-				"time": 1277
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2025",
-				"time": 1282
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2141",
-				"time": 1287
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2111",
-				"time": 1292
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2157",
-				"time": 1297
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2117",
-				"time": 1302
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2127",
-				"time": 1307
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2101",
-				"time": 1312
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2123",
-				"time": 1317
-			},
 			{
 				"id": "odpt.Train:TokyoMetro.Marunouchi.A2119",
 				"time": 1322
@@ -4357,54 +2993,6 @@
 		"direction": "odpt.RailDirection:TokyoMetro.Ikebukuro",
 		"timetable": [
 			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2001",
-				"time": 1261
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2023",
-				"time": 1266
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2019",
-				"time": 1271
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2049",
-				"time": 1276
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2029",
-				"time": 1281
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2007",
-				"time": 1286
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2151",
-				"time": 1291
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2109",
-				"time": 1296
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2113",
-				"time": 1301
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2135",
-				"time": 1305
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2103",
-				"time": 1310
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2131",
-				"time": 1315
-			},
-			{
 				"id": "odpt.Train:TokyoMetro.Marunouchi.B2133",
 				"time": 1321
 			},
@@ -4497,54 +3085,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:TokyoMetro.Ogikubo",
 		"timetable": [
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2053",
-				"time": 1260
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2055",
-				"time": 1265
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2021",
-				"time": 1270
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2025",
-				"time": 1275
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2141",
-				"time": 1280
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2111",
-				"time": 1285
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2157",
-				"time": 1290
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2117",
-				"time": 1295
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2127",
-				"time": 1300
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2101",
-				"time": 1305
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2123",
-				"time": 1310
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2119",
-				"time": 1315
-			},
 			{
 				"id": "odpt.Train:TokyoMetro.Marunouchi.A2149",
 				"time": 1320
@@ -4642,54 +3182,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:TokyoMetro.Ikebukuro",
 		"timetable": [
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2017",
-				"time": 1261
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2027",
-				"time": 1266
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2001",
-				"time": 1271
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2023",
-				"time": 1276
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2019",
-				"time": 1281
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2049",
-				"time": 1286
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2029",
-				"time": 1291
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2007",
-				"time": 1296
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2151",
-				"time": 1301
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2109",
-				"time": 1306
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2113",
-				"time": 1310
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2135",
-				"time": 1315
-			},
 			{
 				"id": "odpt.Train:TokyoMetro.Marunouchi.B2103",
 				"time": 1320
@@ -4792,54 +3284,6 @@
 		"direction": "odpt.RailDirection:TokyoMetro.Ogikubo",
 		"timetable": [
 			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2021",
-				"time": 1260
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2025",
-				"time": 1265
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2141",
-				"time": 1270
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2111",
-				"time": 1275
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2157",
-				"time": 1280
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2117",
-				"time": 1285
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2127",
-				"time": 1290
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2101",
-				"time": 1295
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2123",
-				"time": 1300
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2119",
-				"time": 1306
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2149",
-				"time": 1310
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2129",
-				"time": 1315
-			},
-			{
 				"id": "odpt.Train:TokyoMetro.Marunouchi.A2107",
 				"time": 1321
 			},
@@ -4929,54 +3373,6 @@
 		"direction": "odpt.RailDirection:TokyoMetro.Ikebukuro",
 		"timetable": [
 			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2049",
-				"time": 1261
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2029",
-				"time": 1266
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2007",
-				"time": 1271
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2151",
-				"time": 1276
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2109",
-				"time": 1281
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2113",
-				"time": 1286
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2135",
-				"time": 1290
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2103",
-				"time": 1295
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2131",
-				"time": 1300
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2133",
-				"time": 1306
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2153",
-				"time": 1311
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.B2155",
-				"time": 1317
-			},
-			{
 				"id": "odpt.Train:TokyoMetro.Marunouchi.B2121",
 				"time": 1322
 			},
@@ -5057,54 +3453,6 @@
 		"calendar": "odpt.Calendar:SaturdayHoliday",
 		"direction": "odpt.RailDirection:TokyoMetro.Ogikubo",
 		"timetable": [
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2035",
-				"time": 1260
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2031",
-				"time": 1265
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2033",
-				"time": 1270
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2053",
-				"time": 1275
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2055",
-				"time": 1280
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2021",
-				"time": 1285
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2025",
-				"time": 1290
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2141",
-				"time": 1295
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2111",
-				"time": 1300
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2157",
-				"time": 1305
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2117",
-				"time": 1310
-			},
-			{
-				"id": "odpt.Train:TokyoMetro.Marunouchi.A2127",
-				"time": 1315
-			},
 			{
 				"id": "odpt.Train:TokyoMetro.Marunouchi.A2101",
 				"time": 1320

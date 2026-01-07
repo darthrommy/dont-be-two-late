@@ -293,7 +293,7 @@ const prettifyStationTimetable = (
 				const time = convertTime.toMinutes($time);
 
 				// filter out trains departing before 10 PM
-				if (time < 21 * 60) return [];
+				if (time < 22 * 60) return [];
 
 				return { id, time };
 			},

@@ -1,4 +1,4 @@
--- Migration number: 0001 	 2026-01-06T13:35:03.324Z
+-- Migration number: 0001 	 2026-01-07T11:49:50.611Z
 PRAGMA foreign_keys = ON;
 
 DROP TABLE IF EXISTS session;
@@ -13,11 +13,13 @@ CREATE TABLE session (
 ) strict;
 
 CREATE TABLE checking (
-  id TEXT PRIMARY KEY NOT NULL,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   created_at TEXT NOT NULL DEFAULT (DATETIME('now')),
   session_id TEXT NOT NULL REFERENCES session (id) ON DELETE CASCADE,
-  from_lat REAL NOT NULL,
-  from_lon REAL NOT NULL
+  station_id TEXT NOT NULL,
+  operator_id TEXT NOT NULL,
+  departure_time INTEGER NOT NULL,
+  fare INTEGER NOT NULL
 ) strict;
 
 CREATE INDEX idx_checking_session_id ON checking (session_id);

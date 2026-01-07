@@ -11,14 +11,11 @@ import "@fontsource-variable/geist";
 import type { Route } from "./+types/root";
 import "./app.css";
 
-export const links: Route.LinksFunction = () => [
-	{ rel: "manifest", href: "/manifest.json" },
-];
-
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
 			<head>
+				<title>Don't Be Two Late</title>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<Meta />
