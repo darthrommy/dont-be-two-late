@@ -193,7 +193,9 @@ export type RouteItemWithTime = RouteItem & {
 
 export type RouteObject = {
 	from: string;
+	departsAt: number;
 	to: string;
+	arrivesAt: number;
 	fare: number;
 	items: RouteItemWithTime[];
 };

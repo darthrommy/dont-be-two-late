@@ -11,6 +11,12 @@ importers:
       '@base-ui/react':
         specifier: ^1.0.0
         version: 1.0.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@conform-to/react':
+        specifier: ^1.15.1
+        version: 1.15.1(react@19.2.3)
+      '@conform-to/zod':
+        specifier: ^1.15.1
+        version: 1.15.1(zod@4.3.5)
       '@fontsource-variable/geist':
         specifier: ^5.2.8
         version: 5.2.8
@@ -20,6 +26,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      cookie:
+        specifier: ^1.1.1
+        version: 1.1.1
       isbot:
         specifier: ^5.1.32
         version: 5.1.32
@@ -363,6 +372,19 @@ packages:
     engines: {node: '>=16'}
     cpu: [x64]
     os: [win32]
+
+  '@conform-to/dom@1.15.1':
+    resolution: {integrity: sha512-iqx7Ftp26zygHJq62eXK2Sibc8LVIW28bt7c1uAEsGaa7IsEzjCbNgrWblXcFHohf7vFMDisgF2kv8oS5c9Dmg==}
+
+  '@conform-to/react@1.15.1':
+    resolution: {integrity: sha512-cKH5K6MOiuIUPr9b4Z6UU5KYNv3rUmB35OEiY5F0cHvac8uCGFIh7Qjvm2bUrSloh+asAvpK5cZjxTsgYI93yg==}
+    peerDependencies:
+      react: '>=18'
+
+  '@conform-to/zod@1.15.1':
+    resolution: {integrity: sha512-zWx92qADl3xWjnI9E9dW8RarS3orUN9ldfCLTQfHgJHd5dtORFNxYoxj2qsAM9aYm0E3gZ+2EJq750sDTRrZSg==}
+    peerDependencies:
+      zod: ^3.21.0 || ^4.0.0
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -2056,6 +2078,18 @@ snapshots:
 
   '@cloudflare/workerd-windows-64@1.20251210.0':
     optional: true
+
+  '@conform-to/dom@1.15.1': {}
+
+  '@conform-to/react@1.15.1(react@19.2.3)':
+    dependencies:
+      '@conform-to/dom': 1.15.1
+      react: 19.2.3
+
+  '@conform-to/zod@1.15.1(zod@4.3.5)':
+    dependencies:
+      '@conform-to/dom': 1.15.1
+      zod: 4.3.5
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:

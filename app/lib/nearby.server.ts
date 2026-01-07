@@ -24,7 +24,7 @@ const ResponseSchema = z.object({
 type NearbyResult =
 	| {
 			ok: true;
-			data: z.infer<typeof ResponseSchema>["response"]["station"];
+			data: string;
 			raw: Response;
 	  }
 	| {
@@ -48,7 +48,10 @@ type NearbyResult =
  * }
  * ```
  */
-export const nearby = async (x: number, y: number): Promise<NearbyResult> => {
+export const getNearbyStation = async (
+	x: number,
+	y: number,
+): Promise<NearbyResult> => {
 	const url = new URL(HEART_RAILS_API_BASE);
 	url.searchParams.set("x", x.toString());
 	url.searchParams.set("y", y.toString());
@@ -58,7 +61,20 @@ export const nearby = async (x: number, y: number): Promise<NearbyResult> => {
 	if (response.ok) {
 		const responseJson = await response.json();
 		const data = ResponseSchema.parse(responseJson);
-		return { ok: true, data: data.response.station, raw: response };
+
+		const stations = [...data.response.station]
+			.sort((a, b) => {
+				const distA = parseInt(a.distance.replace("m", ""), 10);
+				const distB = parseInt(b.distance.replace("m", ""), 10);
+				return distA - distB;
+			})
+			.map((station) => {
+				return station.name;
+			});
+
+		const uniqueStation = stations[0];
+
+		return { ok: true, data: uniqueStation, raw: response };
 	} else {
 		return { ok: false, error: response.status, raw: response };
 	}

@@ -1,0 +1,16 @@
+import type { DBInstance } from "~/lib/db.server";
+
+export const getCheck = async (db: DBInstance, sessionId: string) => {
+	// get the latest check for the session
+	const query = db
+		.selectFrom("checking as c")
+		.innerJoin("session as s", "s.id", "c.sessionId")
+		.select(["c.fromLon", "c.fromLat", "s.destLat", "s.destLon", "c.sessionId"])
+		.where("c.sessionId", "=", sessionId)
+		.limit(1)
+		.orderBy("c.createdAt", "desc");
+
+	const check = await query.executeTakeFirst();
+
+	return check;
+};

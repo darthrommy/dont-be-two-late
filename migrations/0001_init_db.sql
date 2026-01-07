@@ -13,7 +13,7 @@ CREATE TABLE session (
 ) strict;
 
 CREATE TABLE checking (
-  id TEXT PRIMARY KEY NOT NULL,
+  id INT PRIMARY KEY AUTOINCREMENT,
   created_at TEXT NOT NULL DEFAULT (DATETIME('now')),
   session_id TEXT NOT NULL REFERENCES session (id) ON DELETE CASCADE,
   from_lat REAL NOT NULL,

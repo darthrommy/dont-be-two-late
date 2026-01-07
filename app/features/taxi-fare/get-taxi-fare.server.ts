@@ -1,8 +1,8 @@
 import { z } from "zod/mini";
 
 type GetTaxiFareParams = {
-	from: { lat: number; lng: number };
-	to: { lat: number; lng: number };
+	from: { lat: number; lon: number };
+	to: { lat: number; lon: number };
 	/**
 	 * Google Maps API Key
 	 */
@@ -30,7 +30,7 @@ export const getTaxiFare = async ({ from, to, apiKey }: GetTaxiFareParams) => {
 			location: {
 				latLng: {
 					latitude: from.lat,
-					longitude: from.lng,
+					longitude: from.lon,
 				},
 			},
 		},
@@ -38,7 +38,7 @@ export const getTaxiFare = async ({ from, to, apiKey }: GetTaxiFareParams) => {
 			location: {
 				latLng: {
 					latitude: to.lat,
-					longitude: to.lng,
+					longitude: to.lon,
 				},
 			},
 		},

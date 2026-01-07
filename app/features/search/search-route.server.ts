@@ -46,16 +46,18 @@ export const searchRoute = async (
 
 	const fare = await calculateFare(bestRoute, env);
 
-	const routeFrom = bestRoute?.at(-1)?.fromId;
-	const routeTo = bestRoute?.at(0)?.toId;
+	const fromRoute = bestRoute?.at(-1);
+	const toRoute = bestRoute?.at(0);
 
-	if (!routeFrom || !routeTo) {
+	if (!fromRoute || !toRoute) {
 		return null;
 	}
 
 	return {
-		from: routeFrom,
-		to: routeTo,
+		from: fromRoute.fromId,
+		departsAt: fromRoute.departsAt,
+		to: toRoute.toId,
+		arrivesAt: toRoute.arrivesAt,
 		fare,
 		items: [...bestRoute].reverse(),
 	};
