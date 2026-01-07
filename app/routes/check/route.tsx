@@ -54,20 +54,12 @@ export const loader = async ({ request, context }: Route.LoaderArgs) => {
 	// get current availability
 	const check = await getCheck(context.db, sessionId);
 
-	if (!check) {
-		throw new Response(null, { status: 404 });
-	}
-
 	const fromNearby = await getNearbyStation(check.fromLon, check.fromLat);
 	const toNearby = await getNearbyStation(check.destLon, check.destLat);
 
-	if (!fromNearby.ok || !toNearby.ok) {
-		throw new Response(null, { status: 500 });
-	}
-
 	const route = await searchRoute(
-		fromNearby.data.name,
-		toNearby.data.name,
+		fromNearby.name,
+		toNearby.name,
 		context.cloudflare.env,
 	);
 
@@ -75,7 +67,7 @@ export const loader = async ({ request, context }: Route.LoaderArgs) => {
 		throw new Response(null, { status: 500 });
 	}
 
-	const toFromStation = fromNearby.data.distance;
+	const toFromStation = fromNearby.distance;
 	const toFromWalkTime = Math.ceil(toFromStation / 80); // 80 m/min walking speed
 
 	const actualDepartureTime = route.departsAt - toFromWalkTime;

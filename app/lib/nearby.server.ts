@@ -21,23 +21,6 @@ const ResponseSchema = z.object({
 	}),
 });
 
-type NearbyResult =
-	| {
-			ok: true;
-			data: Omit<
-				z.infer<typeof ResponseSchema>["response"]["station"][number],
-				"distance"
-			> & {
-				distance: number;
-			};
-			raw: Response;
-	  }
-	| {
-			ok: false;
-			error: number;
-			raw: Response;
-	  };
-
 /**
  * Get nearby stations based on coordinates.
  * @param x Longtitude coordinate.
@@ -53,31 +36,24 @@ type NearbyResult =
  * }
  * ```
  */
-export const getNearbyStation = async (
-	x: number,
-	y: number,
-): Promise<NearbyResult> => {
+export const getNearbyStation = async (x: number, y: number) => {
 	const url = new URL(HEART_RAILS_API_BASE);
 	url.searchParams.set("x", x.toString());
 	url.searchParams.set("y", y.toString());
 
 	const response = await fetch(url, { method: "GET" });
 
-	if (response.ok) {
-		const responseJson = await response.json();
-		const data = ResponseSchema.parse(responseJson);
+	const responseJson = await response.json();
+	const data = ResponseSchema.parse(responseJson);
 
-		const stations = data.response.station
-			.map((s) => ({
-				...s,
-				distance: parseInt(s.distance.replace("m", ""), 10),
-			}))
-			.sort((a, b) => a.distance - b.distance);
+	const stations = data.response.station
+		.map((s) => ({
+			...s,
+			distance: parseInt(s.distance.replace("m", ""), 10),
+		}))
+		.sort((a, b) => a.distance - b.distance);
 
-		const uniqueStation = stations[0];
+	const uniqueStation = stations[0];
 
-		return { ok: true, data: uniqueStation, raw: response };
-	} else {
-		return { ok: false, error: response.status, raw: response };
-	}
+	return uniqueStation;
 };
