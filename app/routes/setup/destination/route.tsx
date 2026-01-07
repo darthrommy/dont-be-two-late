@@ -5,11 +5,8 @@ import { data, useFetcher, useNavigate } from "react-router";
 import { buttonStyle } from "~/components/button-link";
 import { BaseLayout } from "~/components/layout";
 import { PageDescription, PageTitle } from "~/components/page-text";
+import { type CoordinatePayload, coordinatePayload } from "~/features/check";
 import { createSession } from "~/lib/session.server";
-import {
-	type DestinationPayload,
-	destinationPayload,
-} from "./_lib/payload.server";
 import { storeDestination } from "./_lib/store-destination.server";
 import type { Route } from "./+types/route";
 
@@ -18,16 +15,19 @@ export default function SetupDestinationPage(_: Route.ComponentProps) {
 	const navigate = useNavigate();
 
 	const submit = useCallback(() => {
+		if (fetcher.state === "submitting") return;
+
 		navigator.geolocation.getCurrentPosition((v) => {
 			const payload = {
 				latitude: v.coords.latitude,
 				longitude: v.coords.longitude,
-			} satisfies DestinationPayload;
+			} satisfies CoordinatePayload;
+
 			fetcher.submit(payload, {
 				method: "post",
 			});
 		});
-	}, [fetcher.submit]);
+	}, [fetcher.submit, fetcher.state]);
 
 	useEffect(() => {
 		if (fetcher.data?.success) {
@@ -54,7 +54,7 @@ export default function SetupDestinationPage(_: Route.ComponentProps) {
 export const action = async ({ request, context }: Route.ActionArgs) => {
 	const formdata = await request.formData();
 	const parsed = parseWithZod(formdata, {
-		schema: destinationPayload,
+		schema: coordinatePayload,
 	});
 
 	if (parsed.status !== "success") {

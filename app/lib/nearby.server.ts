@@ -24,7 +24,12 @@ const ResponseSchema = z.object({
 type NearbyResult =
 	| {
 			ok: true;
-			data: string;
+			data: Omit<
+				z.infer<typeof ResponseSchema>["response"]["station"][number],
+				"distance"
+			> & {
+				distance: number;
+			};
 			raw: Response;
 	  }
 	| {
@@ -62,15 +67,12 @@ export const getNearbyStation = async (
 		const responseJson = await response.json();
 		const data = ResponseSchema.parse(responseJson);
 
-		const stations = [...data.response.station]
-			.sort((a, b) => {
-				const distA = parseInt(a.distance.replace("m", ""), 10);
-				const distB = parseInt(b.distance.replace("m", ""), 10);
-				return distA - distB;
-			})
-			.map((station) => {
-				return station.name;
-			});
+		const stations = data.response.station
+			.map((s) => ({
+				...s,
+				distance: parseInt(s.distance.replace("m", ""), 10),
+			}))
+			.sort((a, b) => a.distance - b.distance);
 
 		const uniqueStation = stations[0];
 

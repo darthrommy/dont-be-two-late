@@ -5,12 +5,12 @@ import { useFetcher, useNavigate } from "react-router";
 import { buttonStyle } from "~/components/button-link";
 import { BaseLayout } from "~/components/layout";
 import { PageDescription, PageTitle } from "~/components/page-text";
-import { updateCheck } from "~/features/check";
-import { getSessionId } from "~/lib/session.server";
 import {
-	type DestinationPayload,
-	destinationPayload,
-} from "../destination/_lib/payload.server";
+	type CoordinatePayload,
+	coordinatePayload,
+	updateCheck,
+} from "~/features/check";
+import { getSessionId } from "~/lib/session.server";
 import type { Route } from "./+types/route";
 
 export default function SetupFinishPage(_: Route.ComponentProps) {
@@ -18,17 +18,19 @@ export default function SetupFinishPage(_: Route.ComponentProps) {
 	const navigate = useNavigate();
 
 	const submit = useCallback(() => {
+		if (fetcher.state === "submitting") return;
+
 		navigator.geolocation.getCurrentPosition((v) => {
 			const payload = {
 				latitude: v.coords.latitude,
 				longitude: v.coords.longitude,
-			} satisfies DestinationPayload;
+			} satisfies CoordinatePayload;
 
 			fetcher.submit(payload, {
 				method: "post",
 			});
 		});
-	}, [fetcher.submit]);
+	}, [fetcher.submit, fetcher.state]);
 
 	useEffect(() => {
 		if (fetcher.data?.success) {
@@ -56,7 +58,7 @@ export default function SetupFinishPage(_: Route.ComponentProps) {
 export const action = async ({ request, context }: Route.ActionArgs) => {
 	const formdata = await request.formData();
 	const parsed = parseWithZod(formdata, {
-		schema: destinationPayload,
+		schema: coordinatePayload,
 	});
 
 	if (parsed.status !== "success") {

@@ -1,13 +1,13 @@
 import { v4 as uuidv4 } from "uuid";
+import type { CoordinatePayload } from "~/features/check";
 import { getDbInstance } from "~/lib/db.server";
-import type { DestinationPayload } from "./payload.server";
 
 /**
  * Store destination coordinates in the database and create a new session
  * @returns Generated session ID
  */
 export const storeDestination = async (
-	payload: DestinationPayload,
+	payload: CoordinatePayload,
 	env: Env,
 ) => {
 	const sessionId = uuidv4();
