@@ -1,7 +1,7 @@
 import { odpt } from "~/lib/odpt.server";
 import type { STATION_KEYS } from "./get-graph.server";
 import type { RouteItemWithTime } from "./types";
-import { IS_OPERATOR_LIMITED, type Operator } from "./utils";
+import { getOperatorId, IS_OPERATOR_LIMITED, type Operator } from "./utils";
 
 /**
  * Calculate total fare for a given route
@@ -47,7 +47,7 @@ export const calculateFare = async (route: RouteItemWithTime[], env: Env) => {
 				const fare = await odptClient.request("OdptRailwayFare", {
 					"odpt:fromStation": currentFromId as STATION_KEYS,
 					"odpt:toStation": currentToId as STATION_KEYS,
-					"odpt:operator": currentOperator,
+					"odpt:operator": getOperatorId(currentOperator),
 				});
 
 				if (!fare.ok) {
@@ -59,7 +59,9 @@ export const calculateFare = async (route: RouteItemWithTime[], env: Env) => {
 				currentFare += fare.data[0]["odpt:ticketFare"];
 			}
 			// Start a new segment
-			currentOperator = nextItem ? (nextItem.operator as Operator) : null;
+			currentOperator = nextItem
+				? (nextItem.operator.replaceAll("odpt.Operator:", "") as Operator)
+				: null;
 			if (nextItem) {
 				currentFromId = nextItem.fromId as STATION_KEYS;
 				currentToId = nextItem.toId as STATION_KEYS;

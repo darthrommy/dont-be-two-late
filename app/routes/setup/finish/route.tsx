@@ -11,6 +11,8 @@ import {
 	updateCheck,
 } from "~/features/check";
 import { getSessionId } from "~/lib/session.server";
+import { estimateThird } from "~/routes/check/_lib/estimate-third";
+import { getToLocation } from "~/routes/check/_lib/get-to-location";
 import type { Route } from "./+types/route";
 
 export default function SetupFinishPage(_: Route.ComponentProps) {
@@ -20,16 +22,26 @@ export default function SetupFinishPage(_: Route.ComponentProps) {
 	const submit = useCallback(() => {
 		if (fetcher.state === "submitting") return;
 
-		navigator.geolocation.getCurrentPosition((v) => {
-			const payload = {
-				latitude: v.coords.latitude,
-				longitude: v.coords.longitude,
-			} satisfies CoordinatePayload;
+		// 渋谷の辺
+		const payload = {
+			latitude: 35.69310482848679,
+			longitude: 139.70175475712858,
+		} satisfies CoordinatePayload;
 
-			fetcher.submit(payload, {
-				method: "post",
-			});
+		fetcher.submit(payload, {
+			method: "post",
 		});
+
+		// navigator.geolocation.getCurrentPosition((v) => {
+		// 	const payload = {
+		// 		latitude: v.coords.latitude,
+		// 		longitude: v.coords.longitude,
+		// 	} satisfies CoordinatePayload;
+
+		// 	fetcher.submit(payload, {
+		// 		method: "post",
+		// 	});
+		// });
 	}, [fetcher.submit, fetcher.state]);
 
 	useEffect(() => {
@@ -56,6 +68,13 @@ export default function SetupFinishPage(_: Route.ComponentProps) {
 }
 
 export const action = async ({ request, context }: Route.ActionArgs) => {
+	const sessionHeader = request.headers.get("cookie") || "";
+	const sessionId = getSessionId(sessionHeader);
+
+	if (!sessionId) {
+		throw new Response("Unauthorized", { status: 401 });
+	}
+
 	const formdata = await request.formData();
 	const parsed = parseWithZod(formdata, {
 		schema: coordinatePayload,
@@ -67,18 +86,30 @@ export const action = async ({ request, context }: Route.ActionArgs) => {
 		};
 	}
 
-	const sessionHeader = request.headers.get("Cookie") || "";
-	const sessionId = getSessionId(sessionHeader);
+	const toLocation = await getToLocation(context.db, sessionId);
 
-	if (!sessionId) {
-		return {
-			success: false,
-		};
+	const estimated = await estimateThird(context.cloudflare.env, {
+		from: {
+			lat: parsed.value.latitude,
+			lon: parsed.value.longitude,
+		},
+		to: {
+			lat: toLocation.destLat,
+			lon: toLocation.destLon,
+		},
+	});
+
+	if (!estimated) {
+		return new Response("Not Found", { status: 404 });
 	}
 
-	const from = parsed.value;
-
-	await updateCheck(context.db, sessionId, from.latitude, from.longitude);
+	await updateCheck(context.db, {
+		sessionId,
+		stationId: estimated.stationId,
+		fare: estimated.fare,
+		departureTime: estimated.departureTime,
+		operatorId: estimated.firstOperator,
+	});
 
 	return {
 		success: true,

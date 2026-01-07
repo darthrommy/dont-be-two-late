@@ -5,7 +5,7 @@ const SESSION_COOKIE_NAME = "session_id";
 const SESSION_LIFETIME = 60 * 60 * 24 * 2; // 2 days
 const sessionCookieSchema = z.partial(
 	z.object({
-		[SESSION_COOKIE_NAME]: z.string().check(z.uuidv7()),
+		[SESSION_COOKIE_NAME]: z.string().check(z.uuidv4()),
 	}),
 );
 
@@ -26,6 +26,7 @@ export const createSession = (sessionId: string): string => {
 		secure: true,
 		sameSite: "lax",
 		maxAge: SESSION_LIFETIME,
+		path: "/",
 	});
 
 	return setCookie;

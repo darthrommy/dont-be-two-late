@@ -1,17 +1,11 @@
-import type { DBInstance } from "~/lib/db.server";
+import type { Insertable } from "kysely";
+import type { DBInstance, T_Checking } from "~/lib/db.server";
 
 export const updateCheck = async (
 	db: DBInstance,
-	sessionId: string,
-	fromLat: number,
-	fromLon: number,
+	payload: Insertable<T_Checking>,
 ) => {
 	// update the latest check for the session
-	const update = db.insertInto("checking").values({
-		sessionId,
-		fromLat,
-		fromLon,
-	});
-
+	const update = db.insertInto("checking").values(payload);
 	await update.execute();
 };

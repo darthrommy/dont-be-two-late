@@ -10,13 +10,16 @@ import {
 	getCheck,
 	updateCheck,
 } from "~/features/check";
-import { searchRoute } from "~/features/search";
-import { getNearbyStation } from "~/lib/nearby.server";
 import { getSessionId } from "~/lib/session.server";
 import { cn } from "~/lib/utils";
+import { estimateThird } from "./_lib/estimate-third";
+import { getToLocation } from "./_lib/get-to-location";
+import {
+	type TwoLateStatus,
+	useTwoLateStatus,
+} from "./_lib/use-twolate-status";
 import type { Route } from "./+types/route";
 
-type CheckStatus = "safe" | "advised" | "hurry";
 const CHECK_TEXT = {
 	safe: {
 		statusText: "Definately, Yes.",
@@ -36,7 +39,7 @@ const CHECK_TEXT = {
 			"You're about to miss the REAL last train!!! Just leave now to save money!!!",
 	},
 } as const satisfies {
-	[key in CheckStatus]: {
+	[key in TwoLateStatus]: {
 		statusText: string;
 		statusColor: string;
 		description: string;
@@ -44,9 +47,10 @@ const CHECK_TEXT = {
 };
 
 export const loader = async ({ request, context }: Route.LoaderArgs) => {
-	const cookie = request.headers.get("Cookie") || "";
+	const cookie = request.headers.get("cookie") || "";
 	const sessionId = getSessionId(cookie);
 
+	// redirect to setup if no session
 	if (!sessionId) {
 		return redirect("/setup/destination");
 	}
@@ -54,55 +58,37 @@ export const loader = async ({ request, context }: Route.LoaderArgs) => {
 	// get current availability
 	const check = await getCheck(context.db, sessionId);
 
-	const fromNearby = await getNearbyStation(check.fromLon, check.fromLat);
-	const toNearby = await getNearbyStation(check.destLon, check.destLat);
-
-	const route = await searchRoute(
-		fromNearby.name,
-		toNearby.name,
-		context.cloudflare.env,
-	);
-
-	if (!route) {
-		throw new Response(null, { status: 500 });
-	}
-
-	const toFromStation = fromNearby.distance;
-	const toFromWalkTime = Math.ceil(toFromStation / 80); // 80 m/min walking speed
-
-	const actualDepartureTime = route.departsAt - toFromWalkTime;
-
-	const today = new Date();
-	const minutesPassedToday = today.getHours() * 60 + today.getMinutes();
-
-	const timeLeft = actualDepartureTime - minutesPassedToday;
-
-	const status: CheckStatus =
-		timeLeft > 15 ? "safe" : timeLeft > 5 ? "advised" : "hurry";
-
-	return {
-		status,
-		timeLeft,
-		route,
-		check,
-	};
+	return check;
 };
 
 export default function CheckPage({ loaderData }: Route.ComponentProps) {
+	const status = useTwoLateStatus(loaderData.departureTime);
+
 	const fetcher = useFetcher<typeof action>();
-
 	const refresh = useCallback(() => {
-		navigator.geolocation.getCurrentPosition((v) => {
-			const payload = {
-				latitude: v.coords.latitude,
-				longitude: v.coords.longitude,
-			} satisfies CoordinatePayload;
+		if (fetcher.state === "submitting") return;
 
-			fetcher.submit(payload, {
-				method: "post",
-			});
+		// 渋谷の辺
+		const payload = {
+			latitude: 35.65595087346799,
+			longitude: 139.7011444803657,
+		} satisfies CoordinatePayload;
+
+		fetcher.submit(payload, {
+			method: "post",
 		});
-	}, [fetcher.submit]);
+
+		// navigator.geolocation.getCurrentPosition((v) => {
+		// 	const payload = {
+		// 		latitude: v.coords.latitude,
+		// 		longitude: v.coords.longitude,
+		// 	} satisfies CoordinatePayload;
+
+		// 	fetcher.submit(payload, {
+		// 		method: "post",
+		// 	});
+		// });
+	}, [fetcher.submit, fetcher.state]);
 
 	return (
 		<BaseLayout>
@@ -113,24 +99,24 @@ export default function CheckPage({ loaderData }: Route.ComponentProps) {
 			<div className="space-y-2">
 				<p
 					className={cn(
-						CHECK_TEXT[loaderData.status].statusColor,
+						CHECK_TEXT[status].statusColor,
 						"text-5xl/none tracking-[-2.4px] font-medium",
 					)}
 				>
-					{CHECK_TEXT[loaderData.status].statusText}
+					{CHECK_TEXT[status].statusText}
 				</p>
 				<p className="tracking-tight leading-snug">
-					{CHECK_TEXT[loaderData.status].description}
+					{CHECK_TEXT[status].description}
 				</p>
 			</div>
 
-			{loaderData.status === "safe" ? (
+			{status === "safe" ? (
 				<button type="button" className={buttonStyle()} onClick={refresh}>
 					<RefreshCwIcon /> refresh location
 				</button>
 			) : (
 				<ButtonLink
-					to={`https://www.google.com/maps/dir/?api=1&origin=${loaderData.check.fromLat},${loaderData.check.fromLon}&destination=${loaderData.check.destLat},${loaderData.check.destLon}&travelmode=transit`}
+					to={`https://www.google.com/maps/dir/?api=1&destination=${loaderData.destLat},${loaderData.destLon}&travelmode=transit`}
 				>
 					<RouteIcon /> open route navigation
 				</ButtonLink>
@@ -139,9 +125,6 @@ export default function CheckPage({ loaderData }: Route.ComponentProps) {
 	);
 }
 
-/**
- * This is just a trigger for an update, returns no meaningful values
- */
 export const action = async ({ request, context }: Route.ActionArgs) => {
 	const cookie = request.headers.get("Cookie") || "";
 	const sessionId = getSessionId(cookie);
@@ -161,12 +144,30 @@ export const action = async ({ request, context }: Route.ActionArgs) => {
 		};
 	}
 
-	await updateCheck(
-		context.db,
+	const toLocation = await getToLocation(context.db, sessionId);
+
+	const estimated = await estimateThird(context.cloudflare.env, {
+		from: {
+			lat: parsed.value.latitude,
+			lon: parsed.value.longitude,
+		},
+		to: {
+			lat: toLocation.destLat,
+			lon: toLocation.destLon,
+		},
+	});
+
+	if (!estimated) {
+		return redirect("/404");
+	}
+
+	await updateCheck(context.db, {
 		sessionId,
-		parsed.value.latitude,
-		parsed.value.longitude,
-	);
+		stationId: estimated.stationId,
+		fare: estimated.fare,
+		departureTime: estimated.departureTime,
+		operatorId: estimated.firstOperator,
+	});
 
 	return {
 		success: true,

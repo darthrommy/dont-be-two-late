@@ -15,9 +15,9 @@
 	},
 	"d1_databases": [
 		{
-			"binding": "odpt_challenge",
-			"database_name": "odpt-challenge",
-			"database_id": "fc6c516a-8617-4eca-9e73-64b5e75a99c9"
+			"binding": "odpt_db",
+			"database_name": "odpt",
+			"database_id": "22710940-b77a-4725-acf3-39b91c72a17b"
 		}
 	],
 	"compatibility_flags": ["nodejs_compat"]

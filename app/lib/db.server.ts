@@ -23,8 +23,10 @@ export interface T_Checking {
 	id: GeneratedAlways<number>;
 	createdAt: GeneratedAlways<string>;
 	sessionId: string;
-	fromLat: number;
-	fromLon: number;
+	stationId: string;
+	operatorId: string;
+	departureTime: number;
+	fare: number;
 }
 
 type Database = {
@@ -45,7 +47,7 @@ type Database = {
  */
 export const getDbInstance = (env: Env) => {
 	return new Kysely<Database>({
-		dialect: new D1Dialect({ database: env.odpt_challenge }),
+		dialect: new D1Dialect({ database: env.odpt_db }),
 		plugins: [new CamelCasePlugin()],
 	});
 };
