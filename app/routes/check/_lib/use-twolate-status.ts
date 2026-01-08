@@ -15,7 +15,7 @@ const determineStatus = (minsLeft: number): TwoLateStatus => {
 const getMinutesPassedToday = (): number => {
 	const now = new Date();
 	const hours = now.getHours() < 5 ? now.getHours() + 24 : now.getHours();
-	return hours + now.getMinutes();
+	return hours * 60 + now.getMinutes();
 };
 
 export const useTwoLateStatus = (deadline: number) => {
