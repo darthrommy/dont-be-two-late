@@ -8,9 +8,11 @@ export const getCheck = async (db: DBInstance, sessionId: string) => {
 		.select([
 			"c.departureTime",
 			"c.fare",
+			"c.taxiFare",
 			"c.sessionId",
 			"c.operatorId",
 			"c.stationId",
+			"c.stationName",
 			"s.destLat",
 			"s.destLon",
 		])

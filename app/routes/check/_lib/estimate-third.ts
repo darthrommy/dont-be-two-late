@@ -1,4 +1,5 @@
 import { searchRoute } from "~/features/search";
+import { getTaxiFare } from "~/features/taxi-fare/get-taxi-fare.server";
 import { getNearbyStation } from "~/lib/nearby.server";
 
 type Query = {
@@ -26,10 +27,18 @@ export const estimateThird = async (env: Env, { from, to }: Query) => {
 	const timeToFromStation = Math.ceil(distanceToFromStation / 50); // assuming 50 meters per minute walking speed
 	const actualDepartureTime = route.departsAt - timeToFromStation;
 
+	const taxiFare = await getTaxiFare({
+		from,
+		to,
+		apiKey: env.GOOGLE_MAPS_API_KEY, // Env型で定義されていればそのまま渡す
+	});
+
 	return {
 		departureTime: actualDepartureTime,
 		fare: route.fare,
 		stationId: route.from,
+		stationName: fromNearby.name,
 		firstOperator: route.items[0].operator,
+		taxiFare,
 	};
 };

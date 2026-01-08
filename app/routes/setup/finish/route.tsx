@@ -106,14 +106,13 @@ export const action = async ({ request, context }: Route.ActionArgs) => {
 	await updateCheck(context.db, {
 		sessionId,
 		stationId: estimated.stationId,
+		stationName: estimated.stationName,
 		fare: estimated.fare,
 		departureTime: estimated.departureTime,
 		operatorId: estimated.firstOperator,
 		fromLat: parsed.value.latitude,
 		fromLon: parsed.value.longitude,
-		// * you could calculate taxi fare using `getTaxiFare` function
-		// * if you want to implement this, call me again :)
-		// taxiFare: estimated.taxiFare,
+		taxiFare: estimated.taxiFare,
 	});
 
 	return {
