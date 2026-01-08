@@ -1,5 +1,5 @@
 import { parseWithZod } from "@conform-to/zod/v4";
-import { RefreshCwIcon, RouteIcon } from "lucide-react";
+import { RefreshCwIcon, RouteIcon, TrainFrontIcon, CarTaxiFrontIcon } from "lucide-react";
 import { useCallback } from "react";
 import { redirect, useFetcher } from "react-router";
 import { ButtonLink, buttonStyle } from "~/components/button-link";
@@ -112,6 +112,31 @@ export default function CheckPage({ loaderData }: Route.ComponentProps) {
 				</p>
 			</div>
 
+			<div className="space-y-3 text-lg tracking-tight">
+				{loaderData.stationName && (
+					<div className="flex items-center gap-x-2">
+						<TrainFrontIcon className="size-5" />
+						<span>
+							Board at <span className="font-medium">{loaderData.stationName}</span>
+						</span>
+					</div>
+				)}
+				<div className="flex items-center gap-x-2">
+					<TrainFrontIcon className="size-5" />
+					<span>
+						Train fare: <span className="font-medium">{loaderData.fare.toLocaleString()}</span>
+					</span>
+				</div>
+				{loaderData.taxiFare && (
+					<div className="flex items-center gap-x-2">
+						<CarTaxiFrontIcon className="size-5" />
+						<span>
+							Taxi fare: <span className="font-medium">{loaderData.taxiFare.toLocaleString()}</span>
+						</span>
+					</div>
+				)}
+			</div>
+
 			{status === "safe" ? (
 				<button type="button" className={buttonStyle()} onClick={refresh}>
 					<RefreshCwIcon /> refresh location
@@ -166,14 +191,13 @@ export const action = async ({ request, context }: Route.ActionArgs) => {
 	await updateCheck(context.db, {
 		sessionId,
 		stationId: estimated.stationId,
+		stationName: estimated.stationName,
 		fare: estimated.fare,
 		departureTime: estimated.departureTime,
 		operatorId: estimated.firstOperator,
 		fromLat: parsed.value.latitude,
 		fromLon: parsed.value.longitude,
-		// * you could calculate taxi fare using `getTaxiFare` function
-		// * if you want to implement this, call me again :)
-		// taxiFare: estimated.taxiFare,
+		taxiFare: estimated.taxiFare,
 	});
 
 	return {

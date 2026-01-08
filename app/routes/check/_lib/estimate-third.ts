@@ -1,4 +1,5 @@
 import { searchRoute } from "~/features/search";
+import { getTaxiFare } from "~/features/taxi-fare/get-taxi-fare.server";
 import { getNearbyStation } from "~/lib/nearby.server";
 
 type Query = {
@@ -26,10 +27,26 @@ export const estimateThird = async (env: Env, { from, to }: Query) => {
 	const timeToFromStation = Math.ceil(distanceToFromStation / 50); // assuming 50 meters per minute walking speed
 	const actualDepartureTime = route.departsAt - timeToFromStation;
 
+	// タクシー運賃を計算（Google Maps APIキーがある場合のみ）
+	let taxiFare: number | null = null;
+	if (env.GOOGLE_MAPS_API_KEY) {
+		try {
+			taxiFare = await getTaxiFare({
+				from,
+				to,
+				apiKey: env.GOOGLE_MAPS_API_KEY,
+			});
+		} catch {
+			// APIエラーの場合はnullのまま
+		}
+	}
+
 	return {
 		departureTime: actualDepartureTime,
 		fare: route.fare,
 		stationId: route.from,
+		stationName: fromNearby.name,
 		firstOperator: route.items[0].operator,
+		taxiFare,
 	};
 };
