@@ -1,5 +1,10 @@
 import { parseWithZod } from "@conform-to/zod/v4";
-import { RefreshCwIcon, RouteIcon, TrainFrontIcon, CarTaxiFrontIcon } from "lucide-react";
+import {
+	CarTaxiFrontIcon,
+	RefreshCwIcon,
+	RouteIcon,
+	TrainFrontIcon,
+} from "lucide-react";
 import { useCallback } from "react";
 import { redirect, useFetcher } from "react-router";
 import { ButtonLink, buttonStyle } from "~/components/button-link";
@@ -117,21 +122,28 @@ export default function CheckPage({ loaderData }: Route.ComponentProps) {
 					<div className="flex items-center gap-x-2">
 						<TrainFrontIcon className="size-5" />
 						<span>
-							Board at <span className="font-medium">{loaderData.stationName}</span>
+							Board at{" "}
+							<span className="font-medium">{loaderData.stationName}</span>
 						</span>
 					</div>
 				)}
 				<div className="flex items-center gap-x-2">
 					<TrainFrontIcon className="size-5" />
 					<span>
-						Train fare: <span className="font-medium">{loaderData.fare.toLocaleString()}</span>
+						Train fare:{" "}
+						<span className="font-medium">
+							{loaderData.fare.toLocaleString()}
+						</span>
 					</span>
 				</div>
 				{loaderData.taxiFare && (
 					<div className="flex items-center gap-x-2">
 						<CarTaxiFrontIcon className="size-5" />
 						<span>
-							Taxi fare: <span className="font-medium">{loaderData.taxiFare.toLocaleString()}</span>
+							Taxi fare:{" "}
+							<span className="font-medium">
+								{loaderData.taxiFare.toLocaleString()}
+							</span>
 						</span>
 					</div>
 				)}

@@ -27,19 +27,11 @@ export const estimateThird = async (env: Env, { from, to }: Query) => {
 	const timeToFromStation = Math.ceil(distanceToFromStation / 50); // assuming 50 meters per minute walking speed
 	const actualDepartureTime = route.departsAt - timeToFromStation;
 
-	// タクシー運賃を計算（Google Maps APIキーがある場合のみ）
-	let taxiFare: number | null = null;
-	if (env.GOOGLE_MAPS_API_KEY) {
-		try {
-			taxiFare = await getTaxiFare({
-				from,
-				to,
-				apiKey: env.GOOGLE_MAPS_API_KEY,
-			});
-		} catch {
-			// APIエラーの場合はnullのまま
-		}
-	}
+	const taxiFare = await getTaxiFare({
+		from,
+		to,
+		apiKey: env.GOOGLE_MAPS_API_KEY, // Env型で定義されていればそのまま渡す
+	});
 
 	return {
 		departureTime: actualDepartureTime,

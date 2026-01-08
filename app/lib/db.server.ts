@@ -24,13 +24,13 @@ export interface T_Checking {
 	createdAt: GeneratedAlways<string>;
 	sessionId: string;
 	stationId: string;
-	stationName: string | null;
+	stationName: string;
 	operatorId: string;
 	departureTime: number;
 	fare: number;
 	fromLat: number;
 	fromLon: number;
-	taxiFare: number | null;
+	taxiFare: number;
 }
 
 type Database = {
