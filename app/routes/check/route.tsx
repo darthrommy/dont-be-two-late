@@ -58,7 +58,10 @@ export const loader = async ({ request, context }: Route.LoaderArgs) => {
 	// get current availability
 	const check = await getCheck(context.db, sessionId);
 
-	// * you could fetch Station info using check.stationId
+	// redirect to finish setup if no check data yet
+	if (!check) {
+		return redirect("/setup/finish");
+	}
 
 	return check;
 };
@@ -70,26 +73,16 @@ export default function CheckPage({ loaderData }: Route.ComponentProps) {
 	const refresh = useCallback(() => {
 		if (fetcher.state === "submitting") return;
 
-		// 渋谷の辺
-		const payload = {
-			latitude: 35.65595087346799,
-			longitude: 139.7011444803657,
-		} satisfies CoordinatePayload;
+		navigator.geolocation.getCurrentPosition((v) => {
+			const payload = {
+				latitude: v.coords.latitude,
+				longitude: v.coords.longitude,
+			} satisfies CoordinatePayload;
 
-		fetcher.submit(payload, {
-			method: "post",
+			fetcher.submit(payload, {
+				method: "post",
+			});
 		});
-
-		// navigator.geolocation.getCurrentPosition((v) => {
-		// 	const payload = {
-		// 		latitude: v.coords.latitude,
-		// 		longitude: v.coords.longitude,
-		// 	} satisfies CoordinatePayload;
-
-		// 	fetcher.submit(payload, {
-		// 		method: "post",
-		// 	});
-		// });
 	}, [fetcher.submit, fetcher.state]);
 
 	return (

@@ -18,7 +18,7 @@ export const getCheck = async (db: DBInstance, sessionId: string) => {
 		.limit(1)
 		.orderBy("c.createdAt", "desc");
 
-	const check = await query.executeTakeFirstOrThrow();
+	const check = await query.executeTakeFirst();
 
-	return check;
+	return check ?? null;
 };

@@ -22,26 +22,16 @@ export default function SetupFinishPage(_: Route.ComponentProps) {
 	const submit = useCallback(() => {
 		if (fetcher.state === "submitting") return;
 
-		// 渋谷の辺
-		const payload = {
-			latitude: 35.69310482848679,
-			longitude: 139.70175475712858,
-		} satisfies CoordinatePayload;
+		navigator.geolocation.getCurrentPosition((v) => {
+			const payload = {
+				latitude: v.coords.latitude,
+				longitude: v.coords.longitude,
+			} satisfies CoordinatePayload;
 
-		fetcher.submit(payload, {
-			method: "post",
+			fetcher.submit(payload, {
+				method: "post",
+			});
 		});
-
-		// navigator.geolocation.getCurrentPosition((v) => {
-		// 	const payload = {
-		// 		latitude: v.coords.latitude,
-		// 		longitude: v.coords.longitude,
-		// 	} satisfies CoordinatePayload;
-
-		// 	fetcher.submit(payload, {
-		// 		method: "post",
-		// 	});
-		// });
 	}, [fetcher.submit, fetcher.state]);
 
 	useEffect(() => {
