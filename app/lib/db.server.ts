@@ -24,9 +24,8 @@ export interface T_Checking {
 	createdAt: GeneratedAlways<string>;
 	sessionId: string;
 	stationId: string;
-	stationName: string;
-	operatorId: string;
 	departureTime: number;
+	leaveTime: number;
 	fare: number;
 	fromLat: number;
 	fromLon: number;

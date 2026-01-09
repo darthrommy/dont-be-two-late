@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { useCallback } from "react";
 import { redirect, useFetcher } from "react-router";
-import { ButtonLink, buttonStyle } from "~/components/button-link";
+import { buttonStyle } from "~/components/button-link";
 import { BaseLayout } from "~/components/layout";
 import {
 	Item,
@@ -25,8 +25,9 @@ import {
 import { convertTime } from "~/features/search/utils";
 import { getSessionId } from "~/lib/session.server";
 import { cn } from "~/lib/utils";
-import { estimateThird } from "./_lib/estimate-third";
-import { getToLocation } from "./_lib/get-to-location";
+import { estimateThird } from "./_lib/estimate-third.server";
+import { getStationInfo } from "./_lib/get-station-info.server";
+import { getToLocation } from "./_lib/get-to-location.server";
 import {
 	type TwoLateStatus,
 	useTwoLateStatus,
@@ -35,7 +36,7 @@ import type { Route } from "./+types/route";
 
 const CHECK_TEXT = {
 	safe: {
-		statusText: "Definately, Yes.",
+		statusText: "Definitely, Yes.",
 		statusColor: "text-green-500",
 		description: "You still have enough time.",
 	},
@@ -72,13 +73,16 @@ export const loader = async ({ request, context }: Route.LoaderArgs) => {
 	const check = await getCheck(context.db, sessionId);
 
 	// * you could fetch Station info using check.stationId
+	const station = await getStationInfo(context.cloudflare.env, check.stationId);
 
-	return check;
+	return { check, station };
 };
 
-export default function CheckPage({ loaderData }: Route.ComponentProps) {
-	const status = useTwoLateStatus(loaderData.departureTime);
-	const leaveBy = convertTime.toHHMM(loaderData.departureTime);
+export default function CheckPage({
+	loaderData: { check, station },
+}: Route.ComponentProps) {
+	const { status, forceStatus } = useTwoLateStatus(check.leaveTime);
+	const stationDepartureTime = convertTime.toHHMM(check.departureTime);
 
 	const fetcher = useFetcher<typeof action>();
 	const refresh = useCallback(() => {
@@ -118,6 +122,18 @@ export default function CheckPage({ loaderData }: Route.ComponentProps) {
 
 	return (
 		<BaseLayout>
+			<div className="grid justify-start">
+				<button type="button" onClick={() => forceStatus("safe")}>
+					Force Safe
+				</button>
+				<button type="button" onClick={() => forceStatus("advised")}>
+					Force Advised
+				</button>
+				<button type="button" onClick={() => forceStatus("hurry")}>
+					Force Hurry
+				</button>
+			</div>
+
 			<h1 className="text-4xl/none tracking-tight font-medium">
 				Can I get the last trains?
 			</h1>
@@ -141,10 +157,13 @@ export default function CheckPage({ loaderData }: Route.ComponentProps) {
 					<TrainFrontIcon />
 				</ItemMedia>
 				<ItemContent>
-					<ItemTitle>{loaderData.stationName} Station</ItemTitle>
+					<ItemTitle>
+						{station["odpt:stationTitle"]?.en ?? station["dc:title"]} Station
+					</ItemTitle>
 					<ItemDescription>
-						Leave by {leaveBy.hrs.toString().padStart(2, "0")}:
-						{leaveBy.mins.toString().padStart(2, "0")}
+						2 Trains Before:{" "}
+						{stationDepartureTime.hrs.toString().padStart(2, "0")}:
+						{stationDepartureTime.mins.toString().padStart(2, "0")}
 					</ItemDescription>
 				</ItemContent>
 			</Item>
@@ -155,11 +174,14 @@ export default function CheckPage({ loaderData }: Route.ComponentProps) {
 						<RefreshCwIcon /> refresh location
 					</button>
 				) : (
-					<ButtonLink
-						to={`https://www.google.com/maps/dir/?api=1&destination=${loaderData.destLat},${loaderData.destLon}&travelmode=transit`}
+					<a
+						href={`https://www.google.com/maps/dir/?api=1&destination=${check.destLat},${check.destLon}&travelmode=transit`}
+						className={buttonStyle()}
+						target="_blank"
+						rel="noopener"
 					>
 						<RouteIcon /> open route navigation
-					</ButtonLink>
+					</a>
 				)}
 				<button
 					type="button"
@@ -214,10 +236,9 @@ export const action = async ({ request, context }: Route.ActionArgs) => {
 	await updateCheck(context.db, {
 		sessionId,
 		stationId: estimated.stationId,
-		stationName: estimated.stationName,
 		fare: estimated.fare,
 		departureTime: estimated.departureTime,
-		operatorId: estimated.firstOperator,
+		leaveTime: estimated.leaveTime,
 		fromLat: parsed.value.latitude,
 		fromLon: parsed.value.longitude,
 		taxiFare: estimated.taxiFare,
