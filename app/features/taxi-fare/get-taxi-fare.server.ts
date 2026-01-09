@@ -24,8 +24,6 @@ const MapsAPIResponse = z.object({
  * @returns Estimated taxi fare in JPY
  */
 export const getTaxiFare = async ({ from, to, apiKey }: GetTaxiFareParams) => {
-	console.log(apiKey);
-
 	const url = "https://routes.googleapis.com/directions/v2:computeRoutes";
 	const body = {
 		origin: {
