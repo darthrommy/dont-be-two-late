@@ -64,8 +64,6 @@ export const getTaxiFare = async ({ from, to, apiKey }: GetTaxiFareParams) => {
 	});
 
 	if (!response.ok) {
-		console.error({ status: response.status, statusText: response.statusText });
-		console.log(await response.json());
 		throw new Error(
 			`Maps API request failed with status ${response.status} ${response.statusText}`,
 		);
