@@ -1,30 +1,13 @@
 import { parseWithZod } from "@conform-to/zod/v4";
-import {
-	MapPinHouse,
-	RefreshCwIcon,
-	RouteIcon,
-	TrainFrontIcon,
-} from "lucide-react";
-import { useCallback } from "react";
-import { redirect, useFetcher } from "react-router";
-import { buttonStyle } from "~/components/button-link";
+import { redirect } from "react-router";
 import { BaseLayout } from "~/components/layout";
-import {
-	Item,
-	ItemContent,
-	ItemDescription,
-	ItemMedia,
-	ItemTitle,
-} from "~/components/ui/item";
-import {
-	type CoordinatePayload,
-	coordinatePayload,
-	getCheck,
-	updateCheck,
-} from "~/features/check";
-import { convertTime } from "~/features/search/utils";
+import { coordinatePayload, getCheck, updateCheck } from "~/features/check";
 import { getSessionId } from "~/lib/session.server";
 import { cn } from "~/lib/utils";
+import { PurgeSessionButton } from "./_components/purge-session-button";
+import { RefreshLocationButton } from "./_components/refresh-location-button";
+import { RouteNavigationButton } from "./_components/route-navigation-button";
+import { TwoLastInfo } from "./_components/twolast-info";
 import { estimateThird } from "./_lib/estimate-third.server";
 import { getStationInfo } from "./_lib/get-station-info.server";
 import { getToLocation } from "./_lib/get-to-location.server";
@@ -82,43 +65,6 @@ export default function CheckPage({
 	loaderData: { check, station },
 }: Route.ComponentProps) {
 	const { status, forceStatus } = useTwoLateStatus(check.leaveTime);
-	const stationDepartureTime = convertTime.toHHMM(check.departureTime);
-
-	const fetcher = useFetcher<typeof action>();
-	const refresh = useCallback(() => {
-		if (fetcher.state === "submitting") return;
-
-		// 渋谷の辺
-		const payload = {
-			latitude: 35.65595087346799,
-			longitude: 139.7011444803657,
-		} satisfies CoordinatePayload;
-
-		fetcher.submit(payload, {
-			method: "post",
-		});
-
-		// navigator.geolocation.getCurrentPosition((v) => {
-		// 	const payload = {
-		// 		latitude: v.coords.latitude,
-		// 		longitude: v.coords.longitude,
-		// 	} satisfies CoordinatePayload;
-
-		// 	fetcher.submit(payload, {
-		// 		method: "post",
-		// 	});
-		// });
-	}, [fetcher.submit, fetcher.state]);
-
-	const purgeFetcher = useFetcher();
-	const purgeSession = useCallback(() => {
-		if (purgeFetcher.state === "submitting") return;
-
-		purgeFetcher.submit(null, {
-			method: "post",
-			action: "/purge-session",
-		});
-	}, [purgeFetcher.state, purgeFetcher.submit]);
 
 	return (
 		<BaseLayout>
@@ -134,7 +80,7 @@ export default function CheckPage({
 				</button>
 			</div>
 
-			<h1 className="text-4xl/none tracking-tight font-medium">
+			<h1 className="text-[2rem]/none tracking-tighter font-medium">
 				Can I get the last trains?
 			</h1>
 
@@ -142,7 +88,7 @@ export default function CheckPage({
 				<p
 					className={cn(
 						CHECK_TEXT[status].statusColor,
-						"text-5xl/none tracking-[-2.4px] font-medium",
+						"text-5xl/none tracking-tighter font-medium",
 					)}
 				>
 					{CHECK_TEXT[status].statusText}
@@ -152,46 +98,15 @@ export default function CheckPage({
 				</p>
 			</div>
 
-			<Item variant={"outline"}>
-				<ItemMedia>
-					<TrainFrontIcon />
-				</ItemMedia>
-				<ItemContent>
-					<ItemTitle>
-						{station["odpt:stationTitle"]?.en ?? station["dc:title"]} Station
-					</ItemTitle>
-					<ItemDescription>
-						2 Trains Before:{" "}
-						{stationDepartureTime.hrs.toString().padStart(2, "0")}:
-						{stationDepartureTime.mins.toString().padStart(2, "0")}
-					</ItemDescription>
-				</ItemContent>
-			</Item>
+			<TwoLastInfo state={status} station={station} check={check} />
 
 			<div className="flex flex-col gap-y-2">
 				{status === "safe" ? (
-					<button type="button" className={buttonStyle()} onClick={refresh}>
-						<RefreshCwIcon /> refresh location
-					</button>
+					<RefreshLocationButton />
 				) : (
-					<a
-						href={`https://www.google.com/maps/dir/?api=1&destination=${check.destLat},${check.destLon}&travelmode=transit`}
-						className={buttonStyle()}
-						target="_blank"
-						rel="noopener"
-					>
-						<RouteIcon /> open route navigation
-					</a>
+					<RouteNavigationButton lat={check.destLat} lon={check.destLon} />
 				)}
-				<button
-					type="button"
-					className={buttonStyle(
-						"outline bg-transparent text-foreground text-lg [&_svg]:size-5 px-5 py-3",
-					)}
-					onClick={purgeSession}
-				>
-					<MapPinHouse /> change destination
-				</button>
+				<PurgeSessionButton />
 			</div>
 		</BaseLayout>
 	);
