@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { useCallback } from "react";
 import { redirect, useFetcher } from "react-router";
-import { ButtonLink, buttonStyle } from "~/components/button-link";
+import { buttonStyle } from "~/components/button-link";
 import { BaseLayout } from "~/components/layout";
 import {
 	Item,
@@ -36,7 +36,7 @@ import type { Route } from "./+types/route";
 
 const CHECK_TEXT = {
 	safe: {
-		statusText: "Definately, Yes.",
+		statusText: "Definitely, Yes.",
 		statusColor: "text-green-500",
 		description: "You still have enough time.",
 	},
@@ -81,7 +81,7 @@ export const loader = async ({ request, context }: Route.LoaderArgs) => {
 export default function CheckPage({
 	loaderData: { check, station },
 }: Route.ComponentProps) {
-	const status = useTwoLateStatus(check.leaveTime);
+	const { status, forceStatus } = useTwoLateStatus(check.leaveTime);
 	const stationDepartureTime = convertTime.toHHMM(check.departureTime);
 
 	const fetcher = useFetcher<typeof action>();
@@ -122,6 +122,18 @@ export default function CheckPage({
 
 	return (
 		<BaseLayout>
+			<div className="grid justify-start">
+				<button type="button" onClick={() => forceStatus("safe")}>
+					Force Safe
+				</button>
+				<button type="button" onClick={() => forceStatus("advised")}>
+					Force Advised
+				</button>
+				<button type="button" onClick={() => forceStatus("hurry")}>
+					Force Hurry
+				</button>
+			</div>
+
 			<h1 className="text-4xl/none tracking-tight font-medium">
 				Can I get the last trains?
 			</h1>
@@ -162,11 +174,14 @@ export default function CheckPage({
 						<RefreshCwIcon /> refresh location
 					</button>
 				) : (
-					<ButtonLink
-						to={`https://www.google.com/maps/dir/?api=1&destination=${check.destLat},${check.destLon}&travelmode=transit`}
+					<a
+						href={`https://www.google.com/maps/dir/?api=1&destination=${check.destLat},${check.destLon}&travelmode=transit`}
+						className={buttonStyle()}
+						target="_blank"
+						rel="noopener"
 					>
 						<RouteIcon /> open route navigation
-					</ButtonLink>
+					</a>
 				)}
 				<button
 					type="button"
