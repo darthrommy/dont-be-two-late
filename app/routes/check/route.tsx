@@ -208,7 +208,7 @@ export const action = async ({ request, context }: Route.ActionArgs) => {
 	});
 
 	if (!estimated) {
-		return redirect("/404");
+		return new Response("Not Found", { status: 404 });
 	}
 
 	await updateCheck(context.db, {

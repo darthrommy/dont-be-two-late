@@ -1,7 +1,7 @@
 import { parseWithZod } from "@conform-to/zod/v4";
 import { SearchCheckIcon } from "lucide-react";
 import { useCallback, useEffect } from "react";
-import { useFetcher, useNavigate } from "react-router";
+import { redirect, useFetcher, useNavigate } from "react-router";
 import { buttonStyle } from "~/components/button-link";
 import { BaseLayout } from "~/components/layout";
 import { PageDescription, PageTitle } from "~/components/page-text";
@@ -24,8 +24,8 @@ export default function SetupFinishPage(_: Route.ComponentProps) {
 
 		// 渋谷の辺
 		const payload = {
-			latitude: 35.69310482848679,
-			longitude: 139.70175475712858,
+			latitude: 35.65595087346799,
+			longitude: 139.7011444803657,
 		} satisfies CoordinatePayload;
 
 		fetcher.submit(payload, {
@@ -72,7 +72,7 @@ export const action = async ({ request, context }: Route.ActionArgs) => {
 	const sessionId = getSessionId(sessionHeader);
 
 	if (!sessionId) {
-		throw new Response("Unauthorized", { status: 401 });
+		return redirect("/setup/destination");
 	}
 
 	const formdata = await request.formData();
