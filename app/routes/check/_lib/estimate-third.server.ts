@@ -25,7 +25,7 @@ export const estimateThird = async (env: Env, { from, to }: Query) => {
 
 	const distanceToFromStation = fromNearby.distance;
 	const timeToFromStation = Math.ceil(distanceToFromStation / 50); // assuming 50 meters per minute walking speed
-	const actualDepartureTime = route.departsAt - timeToFromStation;
+	const leaveTime = route.departsAt - timeToFromStation;
 
 	const taxiFare = await getTaxiFare({
 		from,
@@ -34,7 +34,8 @@ export const estimateThird = async (env: Env, { from, to }: Query) => {
 	});
 
 	return {
-		departureTime: actualDepartureTime,
+		departureTime: route.departsAt,
+		leaveTime: leaveTime,
 		fare: route.fare,
 		stationId: route.from,
 		stationName: fromNearby.name,

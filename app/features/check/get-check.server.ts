@@ -10,11 +10,10 @@ export const getCheck = async (db: DBInstance, sessionId: string) => {
 			"c.fare",
 			"c.taxiFare",
 			"c.sessionId",
-			"c.operatorId",
 			"c.stationId",
-			"c.stationName",
 			"s.destLat",
 			"s.destLon",
+			"c.leaveTime",
 		])
 		.where("c.sessionId", "=", sessionId)
 		.limit(1)

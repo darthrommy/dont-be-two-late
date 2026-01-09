@@ -11,8 +11,8 @@ import {
 	updateCheck,
 } from "~/features/check";
 import { getSessionId } from "~/lib/session.server";
-import { estimateThird } from "~/routes/check/_lib/estimate-third";
-import { getToLocation } from "~/routes/check/_lib/get-to-location";
+import { estimateThird } from "~/routes/check/_lib/estimate-third.server";
+import { getToLocation } from "~/routes/check/_lib/get-to-location.server";
 import type { Route } from "./+types/route";
 
 export default function SetupFinishPage(_: Route.ComponentProps) {
@@ -106,10 +106,9 @@ export const action = async ({ request, context }: Route.ActionArgs) => {
 	await updateCheck(context.db, {
 		sessionId,
 		stationId: estimated.stationId,
-		stationName: estimated.stationName,
 		fare: estimated.fare,
 		departureTime: estimated.departureTime,
-		operatorId: estimated.firstOperator,
+		leaveTime: estimated.leaveTime,
 		fromLat: parsed.value.latitude,
 		fromLon: parsed.value.longitude,
 		taxiFare: estimated.taxiFare,
