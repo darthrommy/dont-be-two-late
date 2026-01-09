@@ -30,7 +30,7 @@ export const estimateThird = async (env: Env, { from, to }: Query) => {
 	const taxiFare = await getTaxiFare({
 		from,
 		to,
-		apiKey: env.GOOGLE_MAPS_API_KEY, // Env型で定義されていればそのまま渡す
+		apiKey: env.GOOGLE_MAPS_API_KEY,
 	});
 
 	return {
