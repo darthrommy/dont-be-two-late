@@ -18,18 +18,6 @@ const requestHandler = createRequestHandler(
 
 export default {
 	async fetch(request, env, ctx) {
-		console.log(
-			"API Keys:",
-			env.GOOGLE_MAPS_API_KEY,
-			env.ODPT_API_KEY,
-			env.ODPT_LIMITED_API_KEY,
-		);
-		console.log(
-			"process.env:",
-			process.env.GOOGLE_MAPS_API_KEY,
-			process.env.ODPT_API_KEY,
-			process.env.ODPT_LIMITED_API_KEY,
-		);
 		const db = getDbInstance(env);
 		return requestHandler(request, {
 			cloudflare: { env, ctx },
