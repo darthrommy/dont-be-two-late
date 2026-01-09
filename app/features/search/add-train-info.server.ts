@@ -1,11 +1,11 @@
 import { resolveTrainTimetable } from "./_resolve-data.server";
 import type { RouteItem, RouteItemWithTime } from "./types";
 
-const getLatestTrain = async (
+const getTwoLateTrain = async (
 	toId: string,
 	fromId: string,
 	railway: string,
-	deadline: number = 60 * 28,
+	deadline?: number,
 ) => {
 	const trainTimetable = await resolveTrainTimetable();
 	// TRAIN_TIMTABLESから最後の電車を見つけたい
@@ -37,12 +37,20 @@ const getLatestTrain = async (
 
 	// 最後にdeadline以内の最新の電車を見つける
 
-	const latestTrain = trainsBetweenStations
+	const lateTrainsDesc = trainsBetweenStations.sort(
+		(a, b) => b.departsAt - a.departsAt,
+	);
+
+	if (!deadline) {
+		return lateTrainsDesc.at(2);
+	}
+
+	const twoLateTrain = trainsBetweenStations
 		.filter((train) => train.arrivesAt <= deadline)
 		.sort((a, b) => b.departsAt - a.departsAt)
 		.at(0);
 
-	return latestTrain;
+	return twoLateTrain;
 };
 
 /**
@@ -57,13 +65,13 @@ export const addTrainInfo = async (routes: RouteItem[][]) => {
 
 			// get the latest train first
 			const toStationRoute = segment[0];
-			const realLastTrain = await getLatestTrain(
+			const lastTwoTrain = await getTwoLateTrain(
 				toStationRoute.toId,
 				toStationRoute.fromId,
 				toStationRoute.railway,
 			);
 
-			if (!realLastTrain) {
+			if (!lastTwoTrain) {
 				// if no train found, return empty array
 				return [];
 			}
@@ -72,13 +80,12 @@ export const addTrainInfo = async (routes: RouteItem[][]) => {
 				const current = segment[i];
 				const previous = i > 0 ? overwrittenSegment[i - 1] : null;
 
-				const latestTrain = await getLatestTrain(
+				const latestTrain = await getTwoLateTrain(
 					current.toId,
 					current.fromId,
 					current.railway,
 					// add a 5-minute buffer for transfer time
-					// or 20 mins before the real last train's departure time
-					previous ? previous.departsAt - 3 : realLastTrain.arrivesAt - 20,
+					previous ? previous.departsAt - 3 : lastTwoTrain.arrivesAt,
 				);
 
 				if (!latestTrain) {
