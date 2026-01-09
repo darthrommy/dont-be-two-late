@@ -24,7 +24,7 @@ const MapsAPIResponse = z.object({
  * @returns Estimated taxi fare in JPY
  */
 export const getTaxiFare = async ({ from, to, apiKey }: GetTaxiFareParams) => {
-	const url = "https://routes.googleapis.com/directions/v2:computeRoutes";
+	const url = `https://routes.googleapis.com/directions/v2:computeRoutes?key=${apiKey}`;
 	const body = {
 		origin: {
 			location: {
@@ -57,17 +57,18 @@ export const getTaxiFare = async ({ from, to, apiKey }: GetTaxiFareParams) => {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
-			"X-Goog-Api-Key": apiKey,
+			// "X-Goog-Api-Key": apiKey,
 			"X-Goog-FieldMask": "routes.duration,routes.distanceMeters",
 		},
 		body: JSON.stringify(body),
 	});
 
 	if (!response.ok) {
-		console.error("Maps API threw error");
 		console.error({ status: response.status, statusText: response.statusText });
 		console.log(await response.json());
-		throw new Error(`Maps API request failed with status ${response.status}`);
+		throw new Error(
+			`Maps API request failed with status ${response.status} ${response.statusText}`,
+		);
 	}
 
 	const data = MapsAPIResponse.parse(await response.json());
