@@ -24,8 +24,16 @@ export interface T_Checking {
 	createdAt: GeneratedAlways<string>;
 	sessionId: string;
 	stationId: string;
-	departureTime: number;
-	leaveTime: number;
+	/**
+	 * ISO8601 string
+	 * @example "2024-06-01T15:30:00+09:00"
+	 */
+	departureTime: string;
+	/**
+	 * ISO8601 string
+	 * @example "2024-06-01T15:10:00+09:00"
+	 */
+	leaveTime: string;
 	fare: number;
 	fromLat: number;
 	fromLon: number;

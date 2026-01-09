@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 
 export type TwoLateStatus = "safe" | "advised" | "hurry";
 
-const determineStatus = (minsLeft: number): TwoLateStatus => {
+const determineStatus = (deadline: string): TwoLateStatus => {
+	const now = Date.now();
+	const deadlineTime = new Date(deadline).getTime();
+	const minsLeft = Math.floor((deadlineTime - now) / (1000 * 60));
+
 	if (minsLeft > 15) {
 		return "safe";
 	} else if (minsLeft > 5) {
@@ -12,22 +16,19 @@ const determineStatus = (minsLeft: number): TwoLateStatus => {
 	}
 };
 
-const getMinutesPassedToday = (): number => {
-	const now = new Date();
-	const hours = now.getHours() < 5 ? now.getHours() + 24 : now.getHours();
-	const minutesPassed = hours * 60 + now.getMinutes();
-	return minutesPassed;
-};
-
-export const useTwoLateStatus = (deadline: number) => {
+/**
+ * Hook to get the current TwoLateStatus based on the given deadline.
+ * @param deadline ISO8601 string representing the leave time
+ * @returns An object containing the current status and a function to forcefully set the status.
+ */
+export const useTwoLateStatus = (deadline: string) => {
 	const [status, setStatus] = useState<TwoLateStatus>(() =>
-		determineStatus(deadline - getMinutesPassedToday()),
+		determineStatus(deadline),
 	);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			const minsLeft = deadline - getMinutesPassedToday();
-			setStatus(determineStatus(minsLeft));
+			setStatus(determineStatus(deadline));
 		}, 60000);
 
 		return () => clearInterval(interval);
