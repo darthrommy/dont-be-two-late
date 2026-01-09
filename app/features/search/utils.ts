@@ -16,6 +16,9 @@ type Line<T extends Operator> = (typeof RAILWAYS)[T][number];
 export const getOperatorId = (operator: Operator) => {
 	return `odpt.Operator:${operator}`;
 };
+export const extractOperator = (odptOperatorId: string) => {
+	return odptOperatorId.replace("odpt.Operator:", "") as Operator;
+};
 
 /**
  * Get ODPT railway identifier

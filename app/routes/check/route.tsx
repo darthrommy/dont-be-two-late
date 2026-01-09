@@ -1,6 +1,6 @@
 import { parseWithZod } from "@conform-to/zod/v4";
 import {
-	CarTaxiFrontIcon,
+	MapPinHouse,
 	RefreshCwIcon,
 	RouteIcon,
 	TrainFrontIcon,
@@ -10,11 +10,19 @@ import { redirect, useFetcher } from "react-router";
 import { ButtonLink, buttonStyle } from "~/components/button-link";
 import { BaseLayout } from "~/components/layout";
 import {
+	Item,
+	ItemContent,
+	ItemDescription,
+	ItemMedia,
+	ItemTitle,
+} from "~/components/ui/item";
+import {
 	type CoordinatePayload,
 	coordinatePayload,
 	getCheck,
 	updateCheck,
 } from "~/features/check";
+import { convertTime } from "~/features/search/utils";
 import { getSessionId } from "~/lib/session.server";
 import { cn } from "~/lib/utils";
 import { estimateThird } from "./_lib/estimate-third";
@@ -70,6 +78,7 @@ export const loader = async ({ request, context }: Route.LoaderArgs) => {
 
 export default function CheckPage({ loaderData }: Route.ComponentProps) {
 	const status = useTwoLateStatus(loaderData.departureTime);
+	const leaveBy = convertTime.toHHMM(loaderData.departureTime);
 
 	const fetcher = useFetcher<typeof action>();
 	const refresh = useCallback(() => {
@@ -97,6 +106,16 @@ export default function CheckPage({ loaderData }: Route.ComponentProps) {
 		// });
 	}, [fetcher.submit, fetcher.state]);
 
+	const purgeFetcher = useFetcher();
+	const purgeSession = useCallback(() => {
+		if (purgeFetcher.state === "submitting") return;
+
+		purgeFetcher.submit(null, {
+			method: "post",
+			action: "/purge-session",
+		});
+	}, [purgeFetcher.state, purgeFetcher.submit]);
+
 	return (
 		<BaseLayout>
 			<h1 className="text-4xl/none tracking-tight font-medium">
@@ -117,49 +136,41 @@ export default function CheckPage({ loaderData }: Route.ComponentProps) {
 				</p>
 			</div>
 
-			<div className="space-y-3 text-lg tracking-tight">
-				{loaderData.stationName && (
-					<div className="flex items-center gap-x-2">
-						<TrainFrontIcon className="size-5" />
-						<span>
-							Board at{" "}
-							<span className="font-medium">{loaderData.stationName}</span>
-						</span>
-					</div>
-				)}
-				<div className="flex items-center gap-x-2">
-					<TrainFrontIcon className="size-5" />
-					<span>
-						Train fare:{" "}
-						<span className="font-medium">
-							{loaderData.fare.toLocaleString()}
-						</span>
-					</span>
-				</div>
-				{loaderData.taxiFare && (
-					<div className="flex items-center gap-x-2">
-						<CarTaxiFrontIcon className="size-5" />
-						<span>
-							Taxi fare:{" "}
-							<span className="font-medium">
-								{loaderData.taxiFare.toLocaleString()}
-							</span>
-						</span>
-					</div>
-				)}
-			</div>
+			<Item variant={"outline"}>
+				<ItemMedia>
+					<TrainFrontIcon />
+				</ItemMedia>
+				<ItemContent>
+					<ItemTitle>{loaderData.stationName} Station</ItemTitle>
+					<ItemDescription>
+						Leave by {leaveBy.hrs.toString().padStart(2, "0")}:
+						{leaveBy.mins.toString().padStart(2, "0")}
+					</ItemDescription>
+				</ItemContent>
+			</Item>
 
-			{status === "safe" ? (
-				<button type="button" className={buttonStyle()} onClick={refresh}>
-					<RefreshCwIcon /> refresh location
-				</button>
-			) : (
-				<ButtonLink
-					to={`https://www.google.com/maps/dir/?api=1&destination=${loaderData.destLat},${loaderData.destLon}&travelmode=transit`}
+			<div className="flex flex-col gap-y-2">
+				{status === "safe" ? (
+					<button type="button" className={buttonStyle()} onClick={refresh}>
+						<RefreshCwIcon /> refresh location
+					</button>
+				) : (
+					<ButtonLink
+						to={`https://www.google.com/maps/dir/?api=1&destination=${loaderData.destLat},${loaderData.destLon}&travelmode=transit`}
+					>
+						<RouteIcon /> open route navigation
+					</ButtonLink>
+				)}
+				<button
+					type="button"
+					className={buttonStyle(
+						"outline bg-transparent text-foreground text-lg [&_svg]:size-5 px-5 py-3",
+					)}
+					onClick={purgeSession}
 				>
-					<RouteIcon /> open route navigation
-				</ButtonLink>
-			)}
+					<MapPinHouse /> change destination
+				</button>
+			</div>
 		</BaseLayout>
 	);
 }
