@@ -9,41 +9,45 @@ import { D1Dialect } from "kysely-d1";
 
 type Immutable<T> = ColumnType<T, T, never>;
 
-export interface T_Session {
-	/**
-	 * UUID v4 session ID.
-	 * @private
-	 */
-	id: Immutable<string>;
-	createdAt: GeneratedAlways<string>;
-	destLat: number;
-	destLon: number;
+export interface T_Fcm_Token {
+	token: Immutable<string>;
 }
 
-export interface T_Checking {
+export interface T_Destination {
 	id: GeneratedAlways<number>;
-	createdAt: GeneratedAlways<string>;
-	sessionId: string;
+	createdAt: Immutable<string>;
+	token: string;
+	latitude: number;
+	longitude: number;
+}
+
+export interface T_Estimation {
+	id: GeneratedAlways<number>;
+	createdAt: Immutable<string>;
+	destinationId: number;
 	stationId: string;
-	/**
-	 * ISO8601 string
-	 * @example "2024-06-01T15:30:00+09:00"
-	 */
 	departureTime: string;
-	/**
-	 * ISO8601 string
-	 * @example "2024-06-01T15:10:00+09:00"
-	 */
 	leaveTime: string;
+	originLatitude: number;
+	originLongitude: number;
 	fare: number;
-	fromLat: number;
-	fromLon: number;
 	taxiFare: number;
 }
 
+export interface T_Message_Queue {
+	id: GeneratedAlways<number>;
+	createdAt: Immutable<string>;
+	estimationId: number;
+	scheduledAt: string;
+	sentAt: string | null;
+	canceledAt: string | null;
+}
+
 type Database = {
-	session: T_Session;
-	checking: T_Checking;
+	fcm_token: T_Fcm_Token;
+	destination: T_Destination;
+	estimation: T_Estimation;
+	message_queue: T_Message_Queue;
 };
 
 /**

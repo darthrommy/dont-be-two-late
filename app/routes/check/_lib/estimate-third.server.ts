@@ -28,7 +28,7 @@ const getISODatetimeFromMinutes = (minutesPassed: number) => {
 	const currentJstHour = Math.floor((nowJst - jstTodayMidnight) / MS_PER_HOUR);
 
 	const targetMinutes =
-		minutesPassed >= 1440 && currentJstHour < 12
+		minutesPassed >= 1440 && currentJstHour < 5
 			? minutesPassed - 1440
 			: minutesPassed;
 
