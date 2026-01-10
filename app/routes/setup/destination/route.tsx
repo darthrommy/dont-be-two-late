@@ -45,6 +45,8 @@ export const action = async ({ request }: Route.ActionArgs) => {
 		schema: coordinatePayload,
 	});
 
+	console.log("Store destination action called", parsed);
+
 	if (parsed.status !== "success") {
 		return new Response("Invalid payload", { status: 400 });
 	}
