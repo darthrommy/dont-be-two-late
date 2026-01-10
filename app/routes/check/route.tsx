@@ -27,7 +27,7 @@ export const loader = async ({ request, context }: Route.LoaderArgs) => {
 	const check = await getCheck(context.db, sessionId);
 
 	// * you could fetch Station info using check.stationId
-	const station = await getStationInfo(context.cloudflare.env, check.stationId);
+	const station = await getStationInfo(check.stationId);
 
 	return { check, station };
 };
@@ -92,7 +92,7 @@ export const action = async ({ request, context }: Route.ActionArgs) => {
 
 	const toLocation = await getToLocation(context.db, sessionId);
 
-	const estimated = await estimateThird(context.cloudflare.env, {
+	const estimated = await estimateThird({
 		from: {
 			lat: parsed.value.latitude,
 			lon: parsed.value.longitude,

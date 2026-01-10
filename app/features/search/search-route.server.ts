@@ -16,7 +16,6 @@ import type { RouteObject } from "./types";
 export const searchRoute = async (
 	from: string,
 	to: string,
-	env: Env,
 ): Promise<RouteObject | null> => {
 	const fromStations = resolveStationIds(from);
 	const toStations = resolveStationIds(to);
@@ -44,7 +43,7 @@ export const searchRoute = async (
 		return null;
 	}
 
-	const fare = await calculateFare(bestRoute, env);
+	const fare = await calculateFare(bestRoute);
 
 	const fromRoute = bestRoute?.at(-1);
 	const toRoute = bestRoute?.at(0);

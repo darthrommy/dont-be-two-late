@@ -6,12 +6,9 @@ import { getDbInstance } from "~/lib/db.server";
  * Store destination coordinates in the database and create a new session
  * @returns Generated session ID
  */
-export const storeDestination = async (
-	payload: CoordinatePayload,
-	env: Env,
-) => {
+export const storeDestination = async (payload: CoordinatePayload) => {
 	const sessionId = uuidv4();
-	const db = getDbInstance(env);
+	const db = getDbInstance();
 
 	await db
 		.insertInto("session")
