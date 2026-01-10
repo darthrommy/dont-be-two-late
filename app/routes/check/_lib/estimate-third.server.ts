@@ -39,11 +39,11 @@ const getISODatetimeFromMinutes = (minutesPassed: number) => {
 	return isoDate;
 };
 
-export const estimateThird = async (env: Env, { from, to }: Query) => {
+export const estimateThird = async ({ from, to }: Query) => {
 	const fromNearby = await getNearbyStation(from.lon, from.lat);
 	const toNearby = await getNearbyStation(to.lon, to.lat);
 
-	const route = await searchRoute(fromNearby.name, toNearby.name, env);
+	const route = await searchRoute(fromNearby.name, toNearby.name);
 
 	if (!route) {
 		return null;
@@ -56,7 +56,6 @@ export const estimateThird = async (env: Env, { from, to }: Query) => {
 	const taxiFare = await getTaxiFare({
 		from,
 		to,
-		apiKey: env.GOOGLE_MAPS_API_KEY,
 	});
 
 	return {

@@ -61,7 +61,7 @@ export default function SetupDestinationPage(_: Route.ComponentProps) {
 	);
 }
 
-export const action = async ({ request, context }: Route.ActionArgs) => {
+export const action = async ({ request }: Route.ActionArgs) => {
 	const formdata = await request.formData();
 	const parsed = parseWithZod(formdata, {
 		schema: coordinatePayload,
@@ -71,10 +71,7 @@ export const action = async ({ request, context }: Route.ActionArgs) => {
 		return new Response("Invalid payload", { status: 400 });
 	}
 
-	const sessionId = await storeDestination(
-		parsed.value,
-		context.cloudflare.env,
-	);
+	const sessionId = await storeDestination(parsed.value);
 
 	const cookieHeader = createSession(sessionId);
 

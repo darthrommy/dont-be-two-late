@@ -1,12 +1,9 @@
+import { env } from "cloudflare:workers";
 import { z } from "zod/mini";
 
 type GetTaxiFareParams = {
 	from: { lat: number; lon: number };
 	to: { lat: number; lon: number };
-	/**
-	 * Google Maps API Key
-	 */
-	apiKey: string;
 };
 
 const MapsAPIResponse = z.object({
@@ -23,8 +20,8 @@ const MapsAPIResponse = z.object({
  * @param param0 From and to coordinates along with API key
  * @returns Estimated taxi fare in JPY
  */
-export const getTaxiFare = async ({ from, to, apiKey }: GetTaxiFareParams) => {
-	const url = `https://routes.googleapis.com/directions/v2:computeRoutes?key=${apiKey}`;
+export const getTaxiFare = async ({ from, to }: GetTaxiFareParams) => {
+	const url = `https://routes.googleapis.com/directions/v2:computeRoutes?key=${env.GOOGLE_MAPS_API_KEY}`;
 	const body = {
 		origin: {
 			location: {

@@ -88,7 +88,7 @@ export const action = async ({ request, context }: Route.ActionArgs) => {
 
 	const toLocation = await getToLocation(context.db, sessionId);
 
-	const estimated = await estimateThird(context.cloudflare.env, {
+	const estimated = await estimateThird({
 		from: {
 			lat: parsed.value.latitude,
 			lon: parsed.value.longitude,

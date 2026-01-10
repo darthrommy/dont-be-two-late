@@ -1,3 +1,4 @@
+import { env } from "cloudflare:workers";
 import {
 	CamelCasePlugin,
 	type ColumnType,
@@ -47,7 +48,6 @@ type Database = {
 
 /**
  * Create a Kysely database instance connected to the D1 database.
- * @param env - The Cloudflare environment containing the D1 database.
  * @returns A Kysely instance connected to the D1 database.
  * @example
  * export const loader = async ({ context }: Route.LoaderArgs) => {
@@ -56,7 +56,7 @@ type Database = {
  *   return res;
  * }
  */
-export const getDbInstance = (env: Env) => {
+export const getDbInstance = () => {
 	return new Kysely<Database>({
 		dialect: new D1Dialect({ database: env.odpt_db }),
 		plugins: [new CamelCasePlugin()],

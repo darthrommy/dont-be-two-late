@@ -1,7 +1,8 @@
+import { env } from "cloudflare:workers";
 import { extractOperator, IS_OPERATOR_LIMITED } from "~/features/search/utils";
 import { odpt } from "~/lib/odpt.server";
 
-export const getStationInfo = async (env: Env, stationId: string) => {
+export const getStationInfo = async (stationId: string) => {
 	const client = odpt(env.ODPT_API_KEY);
 	const limitedClient = odpt(
 		env.ODPT_LIMITED_API_KEY,
