@@ -2,15 +2,14 @@ import { searchRoute } from "~/features/search";
 import { getTaxiFare } from "~/features/taxi-fare/get-taxi-fare.server";
 import { getNearbyStation } from "~/lib/nearby.server";
 
+type Coordinates = {
+	latitude: number;
+	longitude: number;
+};
+
 type Query = {
-	from: {
-		lat: number;
-		lon: number;
-	};
-	to: {
-		lat: number;
-		lon: number;
-	};
+	from: Coordinates;
+	to: Coordinates;
 };
 
 const getISODatetimeFromMinutes = (minutesPassed: number) => {
@@ -28,7 +27,7 @@ const getISODatetimeFromMinutes = (minutesPassed: number) => {
 	const currentJstHour = Math.floor((nowJst - jstTodayMidnight) / MS_PER_HOUR);
 
 	const targetMinutes =
-		minutesPassed >= 1440 && currentJstHour < 12
+		minutesPassed >= 1440 && currentJstHour < 5
 			? minutesPassed - 1440
 			: minutesPassed;
 
@@ -39,9 +38,9 @@ const getISODatetimeFromMinutes = (minutesPassed: number) => {
 	return isoDate;
 };
 
-export const estimateThird = async ({ from, to }: Query) => {
-	const fromNearby = await getNearbyStation(from.lon, from.lat);
-	const toNearby = await getNearbyStation(to.lon, to.lat);
+export const estimateTwoLate = async ({ from, to }: Query) => {
+	const fromNearby = await getNearbyStation(from.longitude, from.latitude);
+	const toNearby = await getNearbyStation(to.longitude, to.latitude);
 
 	const route = await searchRoute(fromNearby.name, toNearby.name);
 

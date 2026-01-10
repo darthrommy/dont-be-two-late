@@ -1,5 +1,5 @@
 import { createRequestHandler } from "react-router";
-import { type DBInstance, getDbInstance } from "~/lib/db.server";
+import { sendNotification } from "~/features/notify";
 
 declare module "react-router" {
 	export interface AppLoadContext {
@@ -7,7 +7,6 @@ declare module "react-router" {
 			env: Env;
 			ctx: ExecutionContext;
 		};
-		db: DBInstance;
 	}
 }
 
@@ -18,10 +17,11 @@ const requestHandler = createRequestHandler(
 
 export default {
 	async fetch(request, env, ctx) {
-		const db = getDbInstance(env);
 		return requestHandler(request, {
 			cloudflare: { env, ctx },
-			db,
 		});
+	},
+	async scheduled(_event, _env, _ctx) {
+		await sendNotification();
 	},
 } satisfies ExportedHandler<Env>;

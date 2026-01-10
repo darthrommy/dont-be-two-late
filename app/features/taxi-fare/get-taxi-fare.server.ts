@@ -1,9 +1,13 @@
 import { env } from "cloudflare:workers";
 import { z } from "zod/mini";
 
+type Coordinates = {
+	latitude: number;
+	longitude: number;
+};
 type GetTaxiFareParams = {
-	from: { lat: number; lon: number };
-	to: { lat: number; lon: number };
+	from: Coordinates;
+	to: Coordinates;
 };
 
 const MapsAPIResponse = z.object({
@@ -25,18 +29,12 @@ export const getTaxiFare = async ({ from, to }: GetTaxiFareParams) => {
 	const body = {
 		origin: {
 			location: {
-				latLng: {
-					latitude: from.lat,
-					longitude: from.lon,
-				},
+				latLng: from,
 			},
 		},
 		destination: {
 			location: {
-				latLng: {
-					latitude: to.lat,
-					longitude: to.lon,
-				},
+				latLng: to,
 			},
 		},
 		travelMode: "DRIVE",
