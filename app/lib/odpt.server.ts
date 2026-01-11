@@ -1,25 +1,19 @@
 import { z } from "zod/mini";
 import type { ODPT_BASE_URL } from "./odpt/const";
-import { OdptRailDirection } from "./odpt/schemas/rail-direction";
+import { OdptOperator } from "./odpt/schemas/operator";
 import { OdptRailway } from "./odpt/schemas/railway";
 import { OdptRailwayFare } from "./odpt/schemas/railway-fare";
 import { OdptStation } from "./odpt/schemas/station";
 import { OdptStationTimetable } from "./odpt/schemas/station-timetable";
-import { OdptTrain } from "./odpt/schemas/train";
-import { OdptTrainInformation } from "./odpt/schemas/train-information";
 import { OdptTrainTimetable } from "./odpt/schemas/train-timetable";
-import { OdptTrainType } from "./odpt/schemas/train-type";
 
 const DATA = {
-	OdptRailDirection,
+	OdptOperator,
 	OdptRailway,
 	OdptRailwayFare,
 	OdptStation,
 	OdptStationTimetable,
-	OdptTrain,
-	OdptTrainInformation,
 	OdptTrainTimetable,
-	OdptTrainType,
 } as const;
 type DataType = typeof DATA;
 type DataKeys = keyof DataType;
