@@ -1,7 +1,6 @@
 import { parseWithZod } from "@conform-to/zod/v4";
 import { Navigation2Icon } from "lucide-react";
-import { useEffect } from "react";
-import { data, useFetcher, useNavigate } from "react-router";
+import { redirect, useFetcher } from "react-router";
 import { buttonStyle } from "~/components/button-link";
 import { BaseLayout } from "~/components/layout";
 import { PageDescription, PageTitle } from "~/components/page-text";
@@ -13,15 +12,7 @@ import type { Route } from "./+types/route";
 
 export default function SetupDestinationPage(_: Route.ComponentProps) {
 	const fetcher = useFetcher<typeof action>();
-	const navigate = useNavigate();
-
 	const submit = useSubmit(fetcher, true);
-
-	useEffect(() => {
-		if (fetcher.data?.success) {
-			navigate("/setup/finish");
-		}
-	}, [fetcher.data, navigate]);
 
 	return (
 		<BaseLayout>
@@ -51,12 +42,9 @@ export const action = async ({ request }: Route.ActionArgs) => {
 
 	await storeDestination(parsed.value);
 
-	return data(
-		{ success: true },
-		{
-			headers: {
-				"Set-Cookie": getFcmTokenCookieHeader(parsed.value.token),
-			},
+	return redirect("/setup/finish", {
+		headers: {
+			"Set-Cookie": getFcmTokenCookieHeader(parsed.value.token),
 		},
-	);
+	});
 };
