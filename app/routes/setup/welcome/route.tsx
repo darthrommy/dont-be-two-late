@@ -1,7 +1,6 @@
 import { parseWithZod } from "@conform-to/zod/v4";
 import { SquareCheckIcon } from "lucide-react";
-import { useEffect } from "react";
-import { data, replace, useFetcher, useNavigate } from "react-router";
+import { data, redirect, replace, useFetcher } from "react-router";
 import { z } from "zod/mini";
 import { buttonStyle } from "~/components/button-link";
 import { BaseLayout } from "~/components/layout";
@@ -27,7 +26,6 @@ export const loader = async ({ request }: Route.LoaderArgs) => {
 };
 
 export default function SetupWelcomePage(_: Route.ComponentProps) {
-	const navigate = useNavigate();
 	const fetcher = useFetcher<typeof action>();
 
 	const onAddedToHomeScreen = async () => {
@@ -38,12 +36,6 @@ export default function SetupWelcomePage(_: Route.ComponentProps) {
 			console.error("Failed to get FCM token:", error);
 		}
 	};
-
-	useEffect(() => {
-		if (fetcher.data?.success) {
-			navigate("/setup/destination");
-		}
-	}, [fetcher.data, navigate]);
 
 	return (
 		<BaseLayout>
@@ -79,13 +71,10 @@ export const action = async ({ request }: Route.ActionArgs) => {
 	}
 
 	const { token } = parsed.value;
-	return data(
-		{ success: true },
-		{
-			headers: {
-				"Set-Cookie": getFcmTokenCookieHeader(token),
-			},
-			status: 200,
+	return redirect("/setup/destination", {
+		headers: {
+			"Set-Cookie": getFcmTokenCookieHeader(token),
 		},
-	);
+		status: 200,
+	});
 };

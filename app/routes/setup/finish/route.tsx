@@ -1,7 +1,6 @@
 import { parseWithZod } from "@conform-to/zod/v4";
 import { SearchCheckIcon } from "lucide-react";
-import { useEffect } from "react";
-import { data, useFetcher, useNavigate } from "react-router";
+import { redirect, useFetcher } from "react-router";
 import { buttonStyle } from "~/components/button-link";
 import { BaseLayout } from "~/components/layout";
 import { PageDescription, PageTitle } from "~/components/page-text";
@@ -18,15 +17,7 @@ import type { Route } from "./+types/route";
 
 export default function SetupFinishPage(_: Route.ComponentProps) {
 	const fetcher = useFetcher<typeof action>();
-	const navigate = useNavigate();
-
 	const submit = useSubmit(fetcher, true);
-
-	useEffect(() => {
-		if (fetcher.data?.success) {
-			navigate("/estimate");
-		}
-	}, [fetcher.data, navigate]);
 
 	return (
 		<BaseLayout>
@@ -79,8 +70,7 @@ export const action = async ({ request }: Route.ActionArgs) => {
 	await cancelNotification(token);
 	await registerNotifiaction(estimationId, estimated.leaveTime);
 
-	return data(
-		{ success: true },
-		{ headers: { "Set-Cookie": getFcmTokenCookieHeader(token) } },
-	);
+	return redirect("/estimate", {
+		headers: { "Set-Cookie": getFcmTokenCookieHeader(token) },
+	});
 };
