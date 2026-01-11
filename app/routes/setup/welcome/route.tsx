@@ -1,14 +1,30 @@
 import { parseWithZod } from "@conform-to/zod/v4";
 import { SquareCheckIcon } from "lucide-react";
 import { useEffect } from "react";
-import { data, useFetcher, useNavigate } from "react-router";
+import { data, replace, useFetcher, useNavigate } from "react-router";
 import { z } from "zod/mini";
 import { buttonStyle } from "~/components/button-link";
 import { BaseLayout } from "~/components/layout";
 import { PageDescription, PageTitle } from "~/components/page-text";
-import { getFcmTokenCookieHeader } from "~/features/notify";
+import {
+	getFcmTokenCookieHeader,
+	getFcmTokenFromCookie,
+	getNotification,
+} from "~/features/notify";
 import { getFcmToken } from "~/features/notify/get-fcm-token";
 import type { Route } from "./+types/route";
+
+export const loader = async ({ request }: Route.LoaderArgs) => {
+	const token = getFcmTokenFromCookie(request.headers.get("cookie"));
+
+	if (token) {
+		const notification = await getNotification(token);
+
+		if (notification) {
+			return replace("/estimate");
+		}
+	}
+};
 
 export default function SetupWelcomePage(_: Route.ComponentProps) {
 	const navigate = useNavigate();
