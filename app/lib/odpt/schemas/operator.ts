@@ -1,4 +1,4 @@
-import { string, z } from "zod/mini";
+import { z } from "zod/mini";
 import type { DataName, EndpointConfig } from "../type-utils";
 import {
 	atContext,
@@ -8,29 +8,27 @@ import {
 	xsdDatetime,
 } from "./base-schemas";
 
-const dataname = "odpt:TrainType" satisfies DataName;
+const dataname = "odpt:Operator" satisfies DataName;
 
 const params = z.partial(
 	z.object({
 		"@id": maybeArray(z.string()),
 		"owl:sameAs": maybeArray(owlSameAs),
-		"odpt:operator": maybeArray(owlSameAs),
 	}),
 );
 
 const data = z.object({
 	"@context": atContext,
-	"@id": string(),
+	"@id": z.string(),
 	"@type": z.literal(dataname),
-	"owl:sameAs": owlSameAs,
 	"dc:date": z.optional(xsdDatetime),
-	"odpt:operator": owlSameAs,
+	"owl:sameAs": owlSameAs,
 	"dc:title": z.optional(z.string()),
-	"odpt:trainTypeTitle": z.optional(multiLanguage),
+	"odpt:operatorTitle": z.optional(multiLanguage),
 });
 
-export const OdptTrainType = {
+export const OdptOperator = {
 	name: dataname,
-	params: params,
-	data: data,
+	params,
+	data,
 } as const satisfies EndpointConfig;

@@ -78,12 +78,11 @@ export const TwoLastInfo = ({ state, station, check }: TwoLastInfoProps) => {
 				<InfoGroup>
 					<InfoItem>
 						<PlaneTakeoffIcon />
-						JR East
+						{station.operator}
 					</InfoItem>
-					<InfoItem invert>
-						{station["odpt:stationTitle"]?.en ?? station["dc:title"]}
-					</InfoItem>
+					<InfoItem invert>{station.stationName}</InfoItem>
 					<InfoItem>{departureTimeFormatted}</InfoItem>
+					<InfoItem invert>¥{check.fare.toLocaleString("en-US")}</InfoItem>
 				</InfoGroup>
 				<InfoGroup>
 					<InfoItem>
