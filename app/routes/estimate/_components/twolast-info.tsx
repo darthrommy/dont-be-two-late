@@ -1,4 +1,8 @@
-import { FootprintsIcon, PlaneTakeoffIcon } from "lucide-react";
+import {
+	CarTaxiFrontIcon,
+	FootprintsIcon,
+	PlaneTakeoffIcon,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "~/lib/utils";
 import type { TwoLateStatus } from "../_lib/use-twolate-status";
@@ -45,7 +49,16 @@ export const TwoLastInfo = ({ state, station, check }: TwoLastInfoProps) => {
 
 	return (
 		<div className="flex flex-col gap-y-2">
-			{state !== "hurry" && (
+			{state === "hurry" ? (
+				<div className="grid">
+					<div className="text-[28px]/none tracking-tighter bg-foreground text-background px-2 py-1 w-fit">
+						Save up to...
+					</div>
+					<div className="text-teal-500 underline underline-offset-8 text-8xl/none font-medium underline-from-font tracking-tighter">
+						¥{(check.taxiFare - check.fare).toLocaleString("en-US")}
+					</div>
+				</div>
+			) : (
 				<p className="flex items-baseline gap-x-1">
 					<span className="text-8xl/none font-medium tracking-tighter">
 						{minsLeft}
@@ -71,6 +84,13 @@ export const TwoLastInfo = ({ state, station, check }: TwoLastInfoProps) => {
 						{station["odpt:stationTitle"]?.en ?? station["dc:title"]}
 					</InfoItem>
 					<InfoItem>{departureTimeFormatted}</InfoItem>
+				</InfoGroup>
+				<InfoGroup>
+					<InfoItem>
+						<CarTaxiFrontIcon />
+						Estimated Taxi Fare
+					</InfoItem>
+					<InfoItem invert>¥{check.taxiFare}</InfoItem>
 				</InfoGroup>
 			</div>
 		</div>

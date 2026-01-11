@@ -96,3 +96,7 @@
 @utility button-link {
 	@apply bg-transparent underline-offset-4 hover:underline text-primary hover:text-primary-foreground font-medium transition-colors;
 }
+
+@utility underline-from-font {
+	text-decoration-thickness: from-font;
+}

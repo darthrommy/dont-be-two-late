@@ -37,17 +37,19 @@ export const StatusText = ({ status }: StatusTextProps) => {
 			<h1 className="text-2xl/none tracking-tighter font-medium">
 				Can I get the last trains?
 			</h1>
-			<p
-				className={cn(
-					CHECK_TEXT[status].statusColor,
-					"text-5xl/none tracking-tighter font-medium",
-				)}
-			>
-				{CHECK_TEXT[status].statusText}
-			</p>
-			<p className="tracking-tight leading-snug">
-				{CHECK_TEXT[status].description}
-			</p>
+			<div className="space-y-1">
+				<p
+					className={cn(
+						CHECK_TEXT[status].statusColor,
+						"text-5xl/none tracking-tighter font-medium",
+					)}
+				>
+					{CHECK_TEXT[status].statusText}
+				</p>
+				<p className="tracking-tight leading-snug">
+					{CHECK_TEXT[status].description}
+				</p>
+			</div>
 		</div>
 	);
 };
