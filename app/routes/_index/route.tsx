@@ -14,7 +14,7 @@ export default function LandingPage(_: Route.ComponentProps) {
 			</h1>
 
 			<Link
-				to={"/setup/destination"}
+				to={"/setup/welcome"}
 				className="text-background bg-foreground text-4xl/none items-center tracking-tighter px-6 py-4 w-fit inline-flex gap-x-2"
 			>
 				get started <ArrowRightIcon className="size-9" />
