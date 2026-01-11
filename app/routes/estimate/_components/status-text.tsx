@@ -34,6 +34,9 @@ type StatusTextProps = {
 export const StatusText = ({ status }: StatusTextProps) => {
 	return (
 		<div className="space-y-2">
+			<h1 className="text-2xl/none tracking-tighter font-medium">
+				Can I get the last trains?
+			</h1>
 			<p
 				className={cn(
 					CHECK_TEXT[status].statusColor,
