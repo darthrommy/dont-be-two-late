@@ -1,5 +1,4 @@
 import { createRequestHandler } from "react-router";
-import { sendNotification } from "~/features/notify";
 
 declare module "react-router" {
 	export interface AppLoadContext {
@@ -20,8 +19,5 @@ export default {
 		return requestHandler(request, {
 			cloudflare: { env, ctx },
 		});
-	},
-	async scheduled(_event, _env, _ctx) {
-		await sendNotification();
 	},
 } satisfies ExportedHandler<Env>;

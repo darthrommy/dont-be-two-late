@@ -21,8 +21,5 @@
 		}
 	],
 	"compatibility_flags": ["nodejs_compat"],
-	"triggers": {
-		"crons": ["* * * * *"]
-	},
 	"placement": { "mode": "smart" }
 }
